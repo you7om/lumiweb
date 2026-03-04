@@ -1,33 +1,62 @@
 <template>
   <footer class="w-full bg-(--primary-black) py-10 px-10 lg:px-0">
-    <div class="w-full 2xl:w-3/4 mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-      
+    <div
+      class="w-full 2xl:w-3/4 mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
+    >
       <!-- Name & Tagline -->
       <div class="flex flex-col gap-1 text-center md:text-left">
-        <span class="text-(--primary-orange) font-bold uppercase tracking-widest text-sm">Julia Koval</span>
-        <span class="text-(--primary-beige)/50 text-xs tracking-wide">Frontend Entwicklerin · Dresden</span>
+        <span
+          class="text-(--primary-orange) font-bold uppercase tracking-widest text-sm"
+          >Julia Koval</span
+        >
+        <span class="text-(--primary-beige)/50 text-xs tracking-wide"
+          >Frontend Entwicklerin · Dresden</span
+        >
       </div>
 
       <!-- Links -->
-      <div class="flex gap-6 text-sm text-(--primary-beige)/70">
-        <a href="#projekte" class="hover:text-(--primary-orange) transition-colors duration-200">Projekte</a>
-        <a href="#über-mich" class="hover:text-(--primary-orange) transition-colors duration-200">Über mich</a>
-        <a href="#kontakt" class="hover:text-(--primary-orange) transition-colors duration-200">Kontakt</a>
-                <a href="#impressum" class="hover:text-(--primary-orange) transition-colors duration-200">Impressum</a>
-                        <a href="#datenschutz" class="hover:text-(--primary-orange) transition-colors duration-200">Datenschutz</a>
-                                <a href="#cookie-hinweise" class="hover:text-(--primary-orange) transition-colors duration-200">Cookie-Hinweise</a>
-                                        <a href="#agb" class="hover:text-(--primary-orange) transition-colors duration-200">AGB</a>
-
-
-
-
+      <div class="flex gap-6 text-sm text-(--primary-beige)/70 w-3/4 md:w-auto flex-wrap justify-center md:justify-start">
+        <a
+          href="/#portfolio"
+          class="hover:text-(--primary-orange) transition-colors duration-200"
+          >Projekte</a
+        >
+        <a
+          href="/#about"
+          class="hover:text-(--primary-orange) transition-colors duration-200"
+          >Über mich</a
+        >
+        <a
+          href="/#kontakt"
+          class="hover:text-(--primary-orange) transition-colors duration-200"
+          >Kontakt</a
+        >
+        <a
+          href="#impressum"
+          class="hover:text-(--primary-orange) transition-colors duration-200"
+          >Impressum</a
+        >
+        <a
+          href="#datenschutz"
+          class="hover:text-(--primary-orange) transition-colors duration-200"
+          >Datenschutz</a
+        >
+        <a
+          href="#cookie-hinweise"
+          class="hover:text-(--primary-orange) transition-colors duration-200"
+          >Cookie-Hinweise</a
+        >
+        <a
+          href="#agb"
+          class="hover:text-(--primary-orange) transition-colors duration-200"
+          >AGB</a
+        >
       </div>
 
       <!-- Copyright -->
       <div class="text-xs text-(--primary-beige)/30 tracking-wide">
         © {{ new Date().getFullYear() }} Julia Koval
       </div>
-
     </div>
   </footer>
 </template>

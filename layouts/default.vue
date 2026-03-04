@@ -12,7 +12,7 @@
       <div class="max-w-3/4 mx-auto px-5 lg:px-0">
         <div class="flex items-center justify-between h-16 md:h-18">
           <!-- Logo / Name -->
-          <a href="#" class="flex items-center gap-2 group">
+          <a class="flex items-center gap-2 group cursor-pointer" @click="goToMainPage">
             <span
               class="text-xl font-bold tracking-tight text-(--primary-black) group-hover:text-(--primary-orange) transition-colors duration-300"
             >
@@ -206,6 +206,10 @@ const navItems = [
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 20;
+};
+
+const goToMainPage = () => {
+  navigateTo("/");
 };
 
 onMounted(() => window.addEventListener("scroll", handleScroll));

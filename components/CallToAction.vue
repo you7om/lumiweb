@@ -80,7 +80,7 @@ h3 {
 }
 
 .feature-card {
-  @apply flex flex-col gap-3 p-12 bg-(--primary-orange) hover:bg-(--primary-beige)/5 transition-colors duration-300;
+  @apply flex flex-col gap-3 p-4 2xl:p-12 bg-(--primary-orange) hover:bg-(--primary-beige)/5 transition-colors duration-300;
 }
 
 .feature-icon {
@@ -88,10 +88,10 @@ h3 {
 }
 
 .feature-title {
-  @apply font-semibold text-(--primary-beige) text-xl leading-snug;
+  @apply font-semibold text-(--primary-beige) text-base lg:text-xl leading-snug;
 }
 
 .feature-text {
-  @apply text-(--primary-beige)/80 text-lg leading-relaxed;
+  @apply text-(--primary-beige)/80 text-base lg:text-lg lg:leading-relaxed;
 }
 </style>

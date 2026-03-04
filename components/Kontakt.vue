@@ -1,9 +1,9 @@
 <template>
-  <div id="kontakt" class="bg-(--primary-orange) py-20 px-10 lg:px-0">
+  <div id="kontakt" class="bg-(--primary-orange) py-10 lg:py-20 px-10 lg:px-0">
     <div class="w-full lg:w-3/4 mx-auto">
       <!-- Überschrift -->
       <div class="text-center mb-12">
-        <span class="feature-badge">Hast du Fragen?</span>
+        <span class="feature-badge">Lass uns über dein Projekt sprechen.</span>
         <h3>Kontaktiere mich!</h3>
       </div>
 

@@ -43,14 +43,14 @@ h2 {
   .btn {
     @apply w-auto inline-flex items-center justify-center font-medium  text-(--primary-orange) border border-(--primary-orange) hover:bg-(--primary-orange) 
     hover:text-white transition-all duration-300 focus:ring-4 focus:bg-(--primary-orange) focus:text-white
-    rounded-full text-lg 2xl:text-2xl px-7 py-3.5 me-2 focus:outline-none cursor-pointer shadow-md hover:shadow-lg;
+    rounded-full text-lg 2xl:text-2xl px-7 py-3 me-2 focus:outline-none cursor-pointer shadow-md hover:shadow-lg;
   }
 
   .btn-orange {
     @apply w-auto inline-flex items-center justify-center font-medium text-white bg-(--primary-orange) border border-(--primary-orange) 
     hover:bg-(--primary-orange) 
     hover:opacity-90 hover:text-white transition-all duration-300 focus:ring-4 focus:bg-(--primary-orange) focus:text-white
-    rounded-full text-lg 2xl:text-2xl px-7 py-3.5 me-2 focus:outline-none cursor-pointer shadow-md hover:shadow-lg;
+    rounded-full text-lg 2xl:text-2xl px-7 py-3 me-2 focus:outline-none cursor-pointer shadow-md hover:shadow-lg;
   }
   .btn-black {
     @apply w-auto inline-flex items-center justify-center font-medium text-white bg-(--primary-black) border border-(--primary-black) 
