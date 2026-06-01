@@ -1,2 +1,5 @@
 User-Agent: *
-Disallow:
+Allow: /
+Disallow: /rechnung-der-bunte-laden
+
+Sitemap: https://lumiweb.de/sitemap.xml

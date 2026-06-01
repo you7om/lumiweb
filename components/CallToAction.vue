@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-(--primary-orange) py-20 px-10 lg:px-0">
-    <div class="w-full lg:w-3/4 mx-auto">
+  <div class="bg-(--primary-orange) py-20">
+    <div class="w-full 2xl:w-3/4 mx-auto px-8 2xl:px-0">
       <!-- Überschrift -->
       <div class="text-center mb-10">
         <span class="feature-badge">Warum mit mir?</span>
@@ -24,7 +24,7 @@
           <p class="feature-title">Inhalte jederzeit selbst bearbeiten</p>
           <p class="feature-text">
             Einfaches CMS – du änderst Texte & Bilder ohne
-            Programmierkenntnisse.
+            Programmier Kenntnisse.
           </p>
         </div>
 
@@ -48,7 +48,7 @@
 
         <div class="feature-card">
           <span class="material-symbols-outlined feature-icon">search</span>
-          <p class="feature-title">SEO & PageSpeed optimiert</p>
+          <p class="feature-title">Schnelle Ladezeiten & bessere Sichtbarkeit bei Google</p>
           <p class="feature-text">
             Gefunden werden auf Google mit schnellen Ladezeiten.
           </p>

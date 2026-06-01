@@ -13,6 +13,7 @@ export const referenzen = [
     location: "Dresden",
     services: "Konzeption, UX-Design, Webdesign, Responsive Design",
     year: "2026",
+    url: "https://krautvollglueck.de",
     features: [
       {
         text: "Übersichtliches Layout",
@@ -51,16 +52,17 @@ export const referenzen = [
   {
     slug: "parkingsoft",
     title: "Frankfurt Airport Parking",
-    badge: "APP",
-    description: "Buchungsportal für Parkplatz-Reservierungen am Frankfurter Flughafen.",
+    badge: "In Entwicklung",
+    description: "Buchungsportal für Parkplatz-Reservierungen am Frankfurter Flughafen",
     img: "/parking-header.png",
     industry: "Mobilität & Parkraum",
     location: "Frankfurt am Main",
     services: "Konzeption, UX-Design, Webdesign, Responsive Design",
     year: "2025 - heute",
+    url: "",
     texts: [
-      "Modernes Buchungsportal für Frankfurt Airport Parking – Kunden können sich einloggen und schnell einen Parkplatz reservieren.",
-      "Besonderes Augenmerk lag auf einer reibungslosen Nutzererfahrung auf allen Geräten – ob am Desktop oder schnell vom Smartphone auf dem Weg zum Flughafen.",
+      "Buchungsportal für einen privaten Parkplatz-Anbieter am Frankfurter Flughafen – Kunden wählen Zeitraum, reservieren ihren Stellplatz und bezahlen in wenigen Schritten.",
+      "Das Projekt befindet sich aktuell noch in der Entwicklung.",
     ],
     features: [
       { text: "Login & Nutzerverwaltung", icon: "manage_accounts", desc: "Sicherer Zugang zum persönlichen Konto" },
@@ -70,8 +72,8 @@ export const referenzen = [
       { text: "Echtzeit-Verfügbarkeit", icon: "schedule", desc: "Immer aktuelle Parkplatz-Verfügbarkeit" },
       { text: "Zahlungsintegration", icon: "credit_card", desc: "Sichere Bezahlung direkt im Portal" },
     ],
-    imgLaptopHeader: "/parking-header.png",
-    imgMobile: "/parking-header.png",
+    imgLaptopHeader: "/parking-laptop.png",
+    imgMobile: "/parking-mobile.png",
   },
   {
     slug: "dwsd",
@@ -83,6 +85,7 @@ export const referenzen = [
     location: "Dresden",
     services: "Konzeption, UX-Design, Webdesign, Responsive Design",
     year: "2025",
+    url: "",
     texts: [
       "Die Webseite präsentiert das Leistungsangebot des Sicherheitsunternehmens klar und professionell – von Objektschutz bis hin zu Veranstaltungssicherheit.",
       "Ein modernes, seriöses Design in dunklen Tönen vermittelt Vertrauen und Kompetenz – genau das, was Kunden von einem Sicherheitsdienstleister erwarten.",
@@ -97,5 +100,105 @@ export const referenzen = [
     ],
     imgLaptopHeader: "/dwsd-laptop-1.png",
     imgMobile: "/dwsd-mobile-1.png",
+  },
+  {
+    slug: "securetime",
+    title: "SecureTime",
+    badge: "Webseite",
+    description: "Marketing-Website für eine Dienstplanungs-Software für Sicherheitsdienstleister.",
+    img: "/securetime-header.png",
+    industry: "Sicherheitsdienstleistungen",
+    location: "Deutschland",
+    services: "Konzeption, UX-Design, Webdesign, Responsive Design",
+    year: "2026",
+    url: "https://securetime.de/",
+    texts: [
+      "Für SecureTime – eine Software für Dienstplanung und Zeiterfassung in Sicherheitsunternehmen – habe ich die Marketing-Website konzipiert und umgesetzt.",
+      "Ziel war es, das Produkt überzeugend zu präsentieren und potenzielle Firmenkunden zur Demo-Anfrage zu bewegen – klar strukturiert, professionell und auf die Zielgruppe zugeschnitten.",
+    ],
+    features: [
+      {
+        text: "Klare Produktpräsentation",
+        icon: "grid_view",
+        desc: "Alle Kernfunktionen der Software übersichtlich und verständlich aufbereitet",
+      },
+      {
+        text: "Für mobile Geräte optimiert",
+        icon: "smartphone",
+        desc: "Perfekte Darstellung auf jedem Gerät",
+      },
+      {
+        text: "Feature-Seiten mit Screenshots",
+        icon: "pageview",
+        desc: "Jede Funktion mit eigener Sektion und echten App-Ansichten erklärt",
+      },
+      {
+        text: "Demo-Anfrage Formular",
+        icon: "mail",
+        desc: "Direkter Einstieg in die Demo über ein einfaches Kontaktformular",
+      },
+      {
+        text: "Zielgruppenspezifisches Design",
+        icon: "groups",
+        desc: "Inhalt und Tonalität auf Sicherheitsdienstleister ausgerichtet",
+      },
+      {
+        text: "Seriöses Farbkonzept",
+        icon: "palette",
+        desc: "Professionelles Design, das Vertrauen und Kompetenz vermittelt",
+      },
+    ],
+    imgLaptopHeader: "/securetime-laptop.png",
+    imgMobile: "/securetime-mobile.png",
+  },
+  {
+    slug: "der-bunte-laden",
+    title: "Der Bunte Laden",
+    badge: "Webseite",
+    description: "WordPress-Webseite für einen Secondhand-Shop in Dresden-Pieschen.",
+    img: "/laden-header.png",
+    industry: "Second Hand / Einzelhandel",
+    location: "Dresden-Pieschen",
+    services: "Konzeption, Webdesign, WordPress, Elementor",
+    year: "2025",
+    url: "https://derbunteladen-dresden.de",
+    texts: [
+      "Für Der Bunte Laden – einen Secondhand-Shop seit über 20 Jahren mitten in Dresden-Pieschen – habe ich eine moderne Webseite gestaltet und umgesetzt.",
+      "Die Seite präsentiert das Sortiment übersichtlich, erklärt den An- und Verkauf-Prozess und stellt das Team vor – warm, einladend und auf die Nachbarschaft zugeschnitten.",
+    ],
+    features: [
+      {
+        text: "Übersichtliche Sortiments-Seiten",
+        icon: "category",
+        desc: "Damen-, Herren-, Kinder- und Sportmode klar strukturiert präsentiert",
+      },
+      {
+        text: "An- und Verkauf erklärt",
+        icon: "swap_horiz",
+        desc: "Verständliche Darstellung des Ankauf-Prozesses für Kunden",
+      },
+      {
+        text: "Über-Uns-Seite",
+        icon: "groups",
+        desc: "Persönliche Vorstellung des Teams mit Geschichte des Ladens",
+      },
+      {
+        text: "Kontakt & Öffnungszeiten",
+        icon: "schedule",
+        desc: "Adresse, Telefon und aktuelle Öffnungszeiten auf einen Blick",
+      },
+      {
+        text: "Für mobile Geräte optimiert",
+        icon: "smartphone",
+        desc: "Perfekte Darstellung auf jedem Gerät",
+      },
+      {
+        text: "Warmes, einladendes Design",
+        icon: "favorite",
+        desc: "Gestaltung passend zum herzlichen Charakter des Ladens",
+      },
+    ],
+    imgLaptopHeader: "/laden-card-laptop.png",
+    imgMobile: "/laden-card-mobile.png",
   },
 ]; 

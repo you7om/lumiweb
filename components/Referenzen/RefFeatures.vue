@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-(--primary-orange) py-10 lg:py-20 px-10 lg:px-0">
+  <div class="bg-(--primary-orange) py-10 lg:py-20 px-6 lg:px-0">
     <div class="w-full lg:w-3/4 mx-auto">
       <!-- Überschrift -->
       <div class="text-center mb-10">

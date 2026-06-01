@@ -15,7 +15,9 @@
       </div>
 
       <!-- Links -->
-      <div class="flex gap-6 text-sm text-(--primary-beige)/70 w-3/4 md:w-auto flex-wrap justify-center md:justify-start">
+      <div
+        class="flex gap-6 text-sm text-(--primary-beige)/70 w-3/4 md:w-auto flex-wrap justify-center md:justify-start"
+      >
         <a
           href="/#portfolio"
           class="hover:text-(--primary-orange) transition-colors duration-200"
@@ -31,31 +33,34 @@
           class="hover:text-(--primary-orange) transition-colors duration-200"
           >Kontakt</a
         >
-        <a
-          href="#impressum"
+        <NuxtLink
+          to="/impressum"
           class="hover:text-(--primary-orange) transition-colors duration-200"
-          >Impressum</a
         >
-        <a
-          href="#datenschutz"
+          Impressum
+        </NuxtLink>
+        <NuxtLink
+          to="/datenschutz"
           class="hover:text-(--primary-orange) transition-colors duration-200"
-          >Datenschutz</a
         >
-        <a
+          Datenschutz
+        </NuxtLink>
+        <!-- <a
           href="#cookie-hinweise"
           class="hover:text-(--primary-orange) transition-colors duration-200"
           >Cookie-Hinweise</a
         >
+        
         <a
           href="#agb"
           class="hover:text-(--primary-orange) transition-colors duration-200"
           >AGB</a
-        >
+        > -->
       </div>
 
       <!-- Copyright -->
       <div class="text-xs text-(--primary-beige)/30 tracking-wide">
-        © {{ new Date().getFullYear() }} Julia Koval
+        © Copyright {{ new Date().getFullYear() }} Julia Koval
       </div>
     </div>
   </footer>

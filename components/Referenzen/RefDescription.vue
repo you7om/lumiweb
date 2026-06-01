@@ -46,6 +46,18 @@
               <p class="info-value">{{ project.year }}</p>
             </div>
           </div>
+
+          <!-- Webseiten-Link -->
+          <a
+            v-if="project.url"
+            :href="project.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-(--primary-orange) text-white font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity"
+          >
+            <span class="material-symbols-outlined text-white! text-base">open_in_new</span>
+            Zur Webseite
+          </a>
         </div>
       </div>
 

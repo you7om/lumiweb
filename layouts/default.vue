@@ -2,14 +2,10 @@
   <div>
     <!-- Header -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      :class="
-        scrolled
-          ? 'bg-(--primary-beige)/80 backdrop-blur-xl shadow-sm border-b border-(--primary-black)/8 2xl:border-none'
-          : 'bg-transparent'
-      "
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 
+      bg-(--primary-beige)/80 backdrop-blur-xl shadow-sm border-b border-(--primary-black)/8 2xl:border-none"
     >
-      <div class="max-w-3/4 mx-auto px-5 lg:px-0">
+      <div class="w-full xl:max-w-3/4 mx-auto px-5 xl:px-0">
         <div class="flex items-center justify-between h-16 md:h-18">
           <!-- Logo / Name -->
           <a class="flex items-center gap-2 group cursor-pointer" @click="goToMainPage">
@@ -94,7 +90,7 @@
     >
       <div class="w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-24 pb-16">
         <!-- Headline oben zentriert -->
-        <div class="text-center mb-12 flex flex-col items-center gap-4">
+        <div class="text-center mb-5 lg:mb-12 flex flex-col items-center gap-4">
           <span
             class="inline-flex items-center gap-2 text-sm font-medium text-(--primary-orange) bg-(--primary-orange)/10 px-4 py-1.5 rounded-full tracking-wide"
           >
@@ -117,7 +113,7 @@
         >
           <!-- Links -->
           <div class="flex-1 flex flex-col gap-6 text-center lg:text-right">
-            <div>
+            <div class="hidden lg:flex flex-col">
               <p
                 class="text-base font-semibold text-(--primary-orange) uppercase tracking-widest mb-1"
               >
@@ -134,7 +130,7 @@
                 Für wen
               </p>
               <p class="text-(--primary-black) leading-relaxed">
-                Firmen & Privatpersonen<br />die online sichtbar sein wollen
+                Kleine Unternehmen<br />& Selbstständige
               </p>
             </div>
           </div>
@@ -153,7 +149,7 @@
 
           <!-- Rechts -->
           <div class="flex-1 flex flex-col gap-6 text-center lg:text-left">
-            <div>
+            <div class="hidden lg:flex flex-col">
               <p
                 class="text-base font-semibold text-(--primary-orange) uppercase tracking-widest mb-1"
               >
@@ -177,7 +173,7 @@
         </div>
 
         <!-- Buttons unten zentriert -->
-        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-12">
+        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-5 lg:mt-12">
           <a href="#leistungen" class="btn-orange"> Leistungen ansehen </a>
           <a href="#kontakt" class="btn"> Kontakt aufnehmen </a>
         </div>
@@ -199,8 +195,8 @@ const scrolled = ref(false);
 const menuOpen = ref(false);
 
 const navItems = [
-  { label: "Leistungen", href: "#leistungen" },
   { label: "Über mich", href: "#about" },
+  { label: "Leistungen", href: "#leistungen" },
   { label: "Portfolio", href: "#portfolio" },
 ];
 

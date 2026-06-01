@@ -1,15 +1,14 @@
 <template>
   <div class="my-10 lg:my-20" id="leistungen">
-    <div class="rounded-2xl w-full 2xl:w-3/4 mx-auto px-10 2xl:px-0">
+    <div class="rounded-2xl w-full 2xl:w-3/4 mx-auto px-8 2xl:px-0">
       <h2>Meine Leistungen</h2>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-2 2xl:gap-12">
         <div class="serviceCard">
           <h3>ONEPAGER</h3>
 
           <p>
-            Alles auf einer Seite — klar, modern und überzeugend. Perfekt für
-            Selbstständige, kleine Unternehmen oder alle, die einen ersten
-            Online-Auftritt brauchen.
+            Alle Inhalte auf einen Blick. Alles, was deine Besucher wissen
+            müssen, auf einer einzigen, klar aufgebauten Seite.
           </p>
           <ul>
             <li>
@@ -38,17 +37,16 @@
             </li>
           </ul>
 
-          <div class="ml-auto mt-3"><p class="price">ab 550 €</p></div>
+          <div class="ml-auto mt-3"><p class="price">ab 850 €</p></div>
 
-          <button class="btn-black my-2">Anfragen</button>
+          <button class="btn-black my-2" @click="navigateTo('/#kontakt')">Anfragen</button>
         </div>
 
         <div class="serviceCard">
-          <h3>KOMPLEXE WEBSEITEN</h3>
+          <h3>MEHRSEITIGE WEBSEITEN</h3>
           <p>
-            Eine vollständige Webseite – für Unternehmen, die professionell
-            auftreten wollen. Damit Ihr Auftritt online genauso überzeugend ist
-            wie vor Ort.
+            Mehr Seiten, mehr Raum für dein Angebot. Strukturiert aufgebaut,
+            damit Ihr Auftritt online genauso überzeugend ist wie vor Ort.
           </p>
           <ul>
             <li>
@@ -57,7 +55,7 @@
             </li>
             <li>
               <span class="material-symbols-outlined">check_small</span>
-              Modernes, individuelles Design
+              Übersichtliche Navigation für eine optimale Nutzererfahrung
             </li>
             <li>
               <span class="material-symbols-outlined">check_small</span>
@@ -77,17 +75,17 @@
               Schnelle Umsetzung
             </li>
           </ul>
-          <div class="ml-auto mt-3"><p class="price">ab 850 €</p></div>
+          <div class="ml-auto mt-3"><p class="price">ab 1250 €</p></div>
 
-          <button class="btn-black my-2">Anfragen</button>
+          <button class="btn-black my-2" @click="navigateTo('/#kontakt')">Anfragen</button>
         </div>
 
         <div class="serviceCard">
           <h3>APP-ENTWICKLUNG</h3>
           <p>
             Du hast eine Idee für eine App oder brauchst eine digitale Lösung
-            für dein Business? Ich entwickle eine Web-App, die
-            genau zu deinem Business passt.
+            für dein Business? Ich entwickle eine Web-App, die deine Abläufe
+            vereinfacht und deinen Kunden das Leben leichter macht.
           </p>
           <ul>
             <li>
@@ -112,9 +110,9 @@
             </li>
           </ul>
 
-          <div class="ml-auto mt-3"><p class="price">ab 1500 €</p></div>
+          <div class="ml-auto mt-3"><p class="price">ab 1900 €</p></div>
 
-          <button class="btn-black my-2">Anfragen</button>
+          <button class="btn-black my-2" @click="navigateTo('/#kontakt')">Anfragen</button>
         </div>
       </div>
     </div>
@@ -139,12 +137,12 @@ li {
   @apply flex gap-2 text-lg text-(--primary-black) items-center;
 }
 .serviceCard {
-  @apply border border-(--primary-orange) rounded-2xl px-12 py-16 text-center justify-between flex flex-col;
+  @apply border border-(--primary-orange) rounded-2xl p-6 md:px-12 md:py-16 text-center justify-between flex flex-col;
 }
 .material-symbols-outlined {
   @apply text-(--primary-orange) font-extrabold;
 }
 .price {
-  @apply text-(--primary-orange) font-bold text-2xl 2xl:text-3xl;
+  @apply text-(--primary-orange) font-bold text-3xl 2xl:text-4xl;
 }
 </style>
