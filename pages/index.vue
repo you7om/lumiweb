@@ -5,10 +5,12 @@
     <AllProjects />
     <AboutMe />
     <Kontakt />
+    <TheFooter />
   </div>
 </template>
 
 <script setup>
+import TheFooter from "~/components/UI/TheFooter.vue";
 import MyServices from "~/components/MyServices.vue";
 import AboutMe from "~/components/AboutMe.vue";
 import CallToAction from "~/components/CallToAction.vue";
