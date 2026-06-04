@@ -1,6 +1,6 @@
 <template>
   <div class="bg-(--primary-orange) py-20">
-    <div class="w-full 2xl:w-3/4 mx-auto px-8 2xl:px-0">
+    <div class="w-full 2xl:w-3/4 mx-auto px-4 2xl:px-0">
       <!-- Überschrift -->
       <div class="text-center mb-10">
         <span class="feature-badge">Warum mit mir?</span>

@@ -1,10 +1,15 @@
 <template>
-  <div class="w-full 2xl:w-3/4 mx-auto my-10 lg:my-20 px-8 2xl:px-0">
+  <div class="w-full 2xl:w-3/4 mx-auto my-6 lg:my-15 px-4 2xl:px-0">
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-xl"
+      class="grid grid-cols-1 lg:grid-cols-[2fr_3fr] rounded-3xl overflow-hidden shadow-xl"
     >
+      <!-- Mobile: Hero-Bild oben (nur auf Mobile, nur wenn vorhanden) -->
+      <div v-if="project.imgDescriptionMobile" class="lg:hidden">
+        <img :src="project.imgDescriptionMobile" class="w-full h-auto object-cover" />
+      </div>
+
       <!-- Linke Seite: Text -->
-      <div class="flex flex-col justify-between bg-white px-12 py-14">
+      <div class="flex flex-col justify-start bg-white px-7 py-8 lg:px-12 lg:py-10">
         <!-- Badge -->
         <div class="mb-6">
           <span
@@ -28,7 +33,7 @@
         <!-- Trennlinie -->
         <!-- Trennlinie -->
         <div class="border-t border-gray-100 pt-8">
-          <div class="grid grid-cols-2 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div class="flex flex-col gap-1">
               <p class="info-label">Branche</p>
               <p class="info-value">{{ project.industry }}</p>
@@ -61,13 +66,13 @@
         </div>
       </div>
 
-      <!-- Rechte Seite: Bild -->
+      <!-- Desktop: Screenshot rechts (nur auf Desktop) -->
       <div
-        class="relative flex items-end justify-center bg-(--primary-orange)/80 overflow-hidden pt-4 lg:pt-10 order-first lg:order-last"
+        class="hidden lg:flex relative items-end justify-center bg-(--primary-orange)/80 overflow-hidden lg:pt-10"
       >
         <img
           :src="project.img"
-          class="relative z-10 w-4/5 lg:w-3/5 h-auto rounded-t-2xl shadow-2xl mt-auto"
+          class="relative z-10 w-4/5 h-auto rounded-t-2xl shadow-2xl mt-auto"
         />
       </div>
     </div>

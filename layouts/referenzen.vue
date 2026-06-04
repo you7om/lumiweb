@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <!-- Header -->
     <header
       class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
@@ -9,7 +9,7 @@
           : 'bg-transparent'
       "
     >
-      <div class="max-w-3/4 mx-auto px-5 lg:px-0">
+      <div class="w-full 2xl:w-3/4 mx-auto px-4 2xl:px-0">
         <div class="flex items-center justify-between h-16 md:h-18">
           <!-- Logo / Name -->
           <a href="/" class="flex items-center gap-2 group">
@@ -92,11 +92,12 @@
     <section
       class="relative flex items-center overflow-hidden bg-white/60 backdrop-blur-xl"
     >
-      <div class="w-full max-w-3/4 mx-auto px-5 lg:px-0 py-30">
+      <div class="w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-25 pb-8 lg:pb-20">
         <!-- Headline oben zentriert -->
-        <div class="text-center mb-12 flex flex-col items-center gap-4">
+        <div class="text-center mb-10 flex flex-col items-center gap-4">
           <span
-            class="inline-flex items-center gap-2 text-sm font-medium text-(--primary-orange) bg-(--primary-orange)/10 px-4 py-1.5 rounded-full tracking-wide"
+            class="inline-flex items-center gap-2 text-sm font-medium text-(--primary-orange) bg-(--primary-orange)/10
+            px-4 py-1.5 rounded-full tracking-wide"
           >
             <span
               class="w-1.5 h-1.5 rounded-full bg-(--primary-orange) inline-block"
@@ -104,16 +105,16 @@
             Freelance Webdesign
           </span>
           <h1
-            class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] text-(--primary-black)"
+            class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
+             font-bold tracking-tight leading-[1.05] text-(--primary-black)"
           >
             Meine
             <span class="text-(--primary-orange)">Projekte</span>
           </h1>
         </div>
 
-
         <!-- Buttons unten zentriert -->
-        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-12">
+        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-5">
           <a href="/#leistungen" class="btn-orange"> Leistungen ansehen </a>
           <a href="/#kontakt" class="btn"> Kontakt aufnehmen </a>
         </div>

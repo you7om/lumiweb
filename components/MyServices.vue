@@ -1,6 +1,6 @@
 <template>
   <div class="my-10 lg:my-20" id="leistungen">
-    <div class="rounded-2xl w-full 2xl:w-3/4 mx-auto px-8 2xl:px-0">
+    <div class="rounded-2xl w-full 2xl:w-3/4 mx-auto px-4 2xl:px-0">
       <h2>Meine Leistungen</h2>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-2 2xl:gap-12">
         <div class="serviceCard">

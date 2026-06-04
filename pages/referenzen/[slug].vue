@@ -1,8 +1,9 @@
 <template>
   <div>
     <RefDescription :project="project" />
-    <RefLaptop :project="project" />
+    <RefFullScreenshot :project="project" />
     <RefFeatures :project="project" />
+    <RefLaptop :project="project" />
     <RefMobile :project="project" />
     <Kontakt />
     <TheFooter />
@@ -11,6 +12,7 @@
 
 <script setup>
 import RefDescription from "~/components/Referenzen/RefDescription.vue";
+import RefFullScreenshot from "~/components/Referenzen/RefFullScreenshot.vue";
 import RefFeatures from "~/components/Referenzen/RefFeatures.vue";
 import RefLaptop from "~/components/Referenzen/RefLaptop.vue";
 import RefMobile from "~/components/Referenzen/RefMobile.vue";

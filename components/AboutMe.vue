@@ -1,7 +1,7 @@
 <template>
   <div
     id="about"
-    class="rounded-2xl w-full 2xl:w-3/4 px-8 2xl:px-0 mx-auto my-15"
+    class="rounded-2xl w-full 2xl:w-3/4 px-4 2xl:px-0 mx-auto my-15"
   >
     <h3>Wer bin ich?</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-10 py-5">
