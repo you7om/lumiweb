@@ -1,5 +1,35 @@
 export const referenzen = [
   {
+    slug: "moku-cafe",
+    title: "Moku Café",
+    badge: "Design",
+    konzept: true,
+    description: "Designkonzept für ein Specialty Coffee Café.",
+    img: "/moku-header.png",
+    industry: "Gastronomie / Café",
+    location: "Dresden",
+    services: "Konzeption, UX-Design, Webdesign, Responsive Design",
+    year: "2026",
+    url: "",
+    texts: [
+      "Moku ist ein fiktives Café-Konzept, das im Rahmen eines Webdesign-Projekts entstanden ist. Die Website zeigt, wie ein modernes Specialty-Coffee-Café aufgebaut sein kann – mit klarer Struktur, ruhiger Gestaltung und Fokus auf das Wesentliche: Getränke und ruhige Atmosphäre.",
+      "Das Konzept zeigt außerdem, wie ein Café seine Inhalte selbst aktuell halten kann. Saisonale Getränke, aktuelle Angebote und die Karte lassen sich einfach anpassen. Das Design ist minimalistisch gehalten und sorgt für eine klare, ruhige Darstellung der Inhalte.",
+    ],
+    features: [
+      { text: "Saisonale Getränkekarte", icon: "menu_book", desc: "Struktur für flexibel anpassbare Inhalte und wechselnde Angebote" },
+      { text: "Visuelle Getränkepräsentation", icon: "coffee", desc: "Klar aufgebaute Präsentation der Getränke mit Fokus auf Lesbarkeit und Übersicht" },
+      { text: "Aktuelles & News-Bereich", icon: "eco", desc: "Eigener Bereich für aktuelle Infos, Ankündigungen und saisonale Neuheiten" },
+      { text: "Öffnungszeiten & Kontakt", icon: "schedule", desc: "Alle Infos auf einen Blick" },
+      { text: "Für mobile Geräte optimiert", icon: "smartphone", desc: "Optimale Darstellung auf jedem Gerät" },
+      { text: "Modernes, ruhiges Design", icon: "palette", desc: "Ruhiges Navy-Farbkonzept mit viel Weißraum und klarer Typografie" },
+    ],
+    cardImg: "/moku-card.png",
+    imgDescriptionMobile: "/moku-cafe-header-mobile.png",
+    imgLaptopHeader: "/moku-card-laptop.png",
+    imgMobile: "/moku-card-mobile.png",
+    fullScreenshot: "/moku-screenshot-full.png",
+  },
+  {
     slug: "krautvollglueck",
     title: "Kraut Voll Glück",
     badge: "Webseite",
@@ -50,7 +80,7 @@ export const referenzen = [
     imgDescriptionMobile: "/kraut-voll-header-mobile.png",
     imgLaptopHeader: "/kraut-voll-laptop-1.png", // Bild in public speichern
     imgMobile: "/kraut-voll-mobile-1.png", // Bild in public speichern
-    fullScreenshot: "/kraut-voll-header.png", // Bild in public speichern :
+    fullScreenshot: "/kraut-voll-screenshot-full.png", // Bild in public speichern :
   },
   {
     slug: "der-bunte-laden",
@@ -100,8 +130,10 @@ export const referenzen = [
       },
     ],
     cardImg: "/laden-card.png",
+    imgDescriptionMobile: "/laden-header-mobile.png",
     imgLaptopHeader: "/laden-card-laptop.png",
     imgMobile: "/laden-card-mobile.png",
+    fullScreenshot: "/laden-screenshot-full.png",
   },
   {
     slug: "securetime",
@@ -151,8 +183,10 @@ export const referenzen = [
       },
     ],
     cardImg: "/securetime-card.png",
+    imgDescriptionMobile: "/securetime-header-mobile.png",
     imgLaptopHeader: "/securetime-laptop.png",
     imgMobile: "/securetime-mobile.png",
+    fullScreenshot: "/securetime-screenshot-full.png",
   },
   {
     slug: "parkingsoft",

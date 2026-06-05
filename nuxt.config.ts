@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   sitemap: {
     strictNuxtContentPaths: false,
     urls: [
+      { loc: "/referenzen/moku-cafe", changefreq: "monthly", priority: 0.8 },
       { loc: "/referenzen/krautvollglueck", changefreq: "monthly", priority: 0.8 },
       { loc: "/referenzen/parkingsoft", changefreq: "monthly", priority: 0.8 },
       { loc: "/referenzen/dwsd", changefreq: "monthly", priority: 0.8 },

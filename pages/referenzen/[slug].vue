@@ -5,6 +5,7 @@
     <RefFeatures :project="project" />
     <RefLaptop :project="project" />
     <RefMobile :project="project" />
+    <RefKonzeptBanner v-if="project.konzept" />
     <Kontakt />
     <TheFooter />
   </div>
@@ -16,6 +17,7 @@ import RefFullScreenshot from "~/components/Referenzen/RefFullScreenshot.vue";
 import RefFeatures from "~/components/Referenzen/RefFeatures.vue";
 import RefLaptop from "~/components/Referenzen/RefLaptop.vue";
 import RefMobile from "~/components/Referenzen/RefMobile.vue";
+import RefKonzeptBanner from "~/components/Referenzen/RefKonzeptBanner.vue";
 import TheFooter from "~/components/UI/TheFooter.vue";
 
 import { referenzen } from "~/data/referenzen.js";
