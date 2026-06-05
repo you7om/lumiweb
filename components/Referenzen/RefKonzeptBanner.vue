@@ -34,7 +34,7 @@ h3 {
 }
 
 .subtext {
-  @apply text-(--primary-black)/80 text-base lg:text-xl max-w-md;
+  @apply text-(--primary-black)/80 text-sm lg:text-xl max-w-md;
 }
 
 .btn {
