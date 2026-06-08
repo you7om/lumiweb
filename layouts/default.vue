@@ -86,9 +86,11 @@
 
     <!-- Hero Section -->
     <section
-      class="relative min-h-screen flex items-center bg-(--primary-beige) overflow-hidden"
+      class="relative min-h-screen flex items-center overflow-hidden bg-[url('/orange-abstract.jpg')] bg-cover bg-center"
     >
-      <div class="w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-24 pb-16">
+      <div class="absolute inset-0 bg-(--primary-beige)/85"></div>
+
+      <div class="relative z-10 w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-24 pb-16">
         <!-- Headline oben zentriert -->
         <div class="text-center mb-5 lg:mb-12 flex flex-col items-center gap-4">
           <span
@@ -103,7 +105,7 @@
             class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] text-(--primary-black)"
           >
             Webseiten,
-            <span class="text-(--primary-orange)">die verkaufen</span>
+            <span class="text-(--primary-orange)">die Vertrauen schaffen</span>
           </h1>
         </div>
 

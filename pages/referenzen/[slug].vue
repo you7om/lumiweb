@@ -3,8 +3,8 @@
     <RefDescription :project="project" />
     <RefFullScreenshot :project="project" />
     <RefFeatures :project="project" />
-    <RefLaptop :project="project" />
-    <RefMobile :project="project" />
+    <RefLaptop v-if="project.imgLaptopHeader" :project="project" />
+    <RefMobile v-if="project.imgMobile" :project="project" />
     <RefKonzeptBanner v-if="project.konzept" />
     <Kontakt />
     <TheFooter />

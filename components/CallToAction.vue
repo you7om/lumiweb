@@ -1,6 +1,6 @@
 <template>
   <div class="bg-(--primary-orange) py-20">
-    <div class="w-full 2xl:w-3/4 mx-auto px-4 2xl:px-0">
+    <div class="w-full 2xl:w-3/4 mx-auto px-4 2xl:px-0 ">
       <!-- Überschrift -->
       <div class="text-center mb-10">
         <span class="feature-badge">Warum mit mir?</span>
@@ -9,7 +9,8 @@
 
       <!-- Grid -->
       <div
-        class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-px bg-(--primary-beige)/10 border border-(--primary-beige)/20 rounded-lg overflow-hidden"
+        class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 
+        gap-px bg-(--primary-beige)/10 border border-(--primary-beige)/20 rounded-lg overflow-hidden"
       >
         <div class="feature-card">
           <span class="material-symbols-outlined feature-icon">palette</span>
