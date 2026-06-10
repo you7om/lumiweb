@@ -6,7 +6,7 @@
       <NuxtLink
         v-for="project in referenzen"
         :key="project.slug"
-        :to="`/referenzen/${project.slug}`"
+        :to="`/projects/${project.slug}`"
         class="project-card group"
       >
         <div class="overflow-hidden rounded-t-2xl">

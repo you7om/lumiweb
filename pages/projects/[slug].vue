@@ -36,7 +36,7 @@ useSeoMeta({
   ogDescription: () => project?.description,
   ogImage: () =>
     project?.img ? `https://lumiweb.de${project.img}` : "https://lumiweb.de/og-image.png",
-  ogUrl: () => `https://lumiweb.de/referenzen/${project?.slug}`,
+  ogUrl: () => `https://lumiweb.de/projects/${project?.slug}`,
   ogType: "website",
   twitterTitle: () => `${project?.title} – Portfolio | LUMI Web`,
   twitterDescription: () => project?.description,
@@ -54,7 +54,7 @@ useHead({
           "@type": "CreativeWork",
           name: project?.title,
           description: project?.description,
-          url: `https://lumiweb.de/referenzen/${project?.slug}`,
+          url: `https://lumiweb.de/projects/${project?.slug}`,
           creator: {
             "@type": "Person",
             name: "Julia Koval",

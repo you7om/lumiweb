@@ -199,7 +199,7 @@ const menuOpen = ref(false);
 const navItems = [
   { label: "Über mich", href: "#about" },
   { label: "Leistungen", href: "#leistungen" },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "Projekte", href: "/projects" },
 ];
 
 const handleScroll = () => {

@@ -18,10 +18,10 @@
       <div
         class="flex gap-6 text-sm text-(--primary-beige)/70 w-3/4 md:w-auto flex-wrap justify-center md:justify-start"
       >
-        <a
-          href="/#portfolio"
+        <NuxtLink
+          to="/projects"
           class="hover:text-(--primary-orange) transition-colors duration-200"
-          >Projekte</a
+          >Projekte</NuxtLink
         >
         <a
           href="/#about"

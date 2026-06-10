@@ -14,12 +14,13 @@ export default defineNuxtConfig({
   sitemap: {
     strictNuxtContentPaths: false,
     urls: [
-      { loc: "/referenzen/moku-cafe", changefreq: "monthly", priority: 0.8 },
-      { loc: "/referenzen/krautvollglueck", changefreq: "monthly", priority: 0.8 },
-      { loc: "/referenzen/parkingsoft", changefreq: "monthly", priority: 0.8 },
-      { loc: "/referenzen/dwsd", changefreq: "monthly", priority: 0.8 },
-      { loc: "/referenzen/securetime", changefreq: "monthly", priority: 0.8 },
-      { loc: "/referenzen/der-bunte-laden", changefreq: "monthly", priority: 0.8 },
+      { loc: "/projects/moku-cafe", changefreq: "monthly", priority: 0.8 },
+      { loc: "/projects/krautvollglueck", changefreq: "monthly", priority: 0.8 },
+      { loc: "/projects/parkingsoft", changefreq: "monthly", priority: 0.8 },
+      { loc: "/projects/dwsd", changefreq: "monthly", priority: 0.8 },
+      { loc: "/projects/securetime", changefreq: "monthly", priority: 0.8 },
+      { loc: "/projects/der-bunte-laden", changefreq: "monthly", priority: 0.8 },
+      { loc: "/projects/sunday-yolk", changefreq: "monthly", priority: 0.8 },
     ],
     exclude: [
       "/agb",

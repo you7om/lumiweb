@@ -16,7 +16,7 @@
             <span
               class="text-xl font-bold tracking-tight text-(--primary-black) group-hover:text-(--primary-orange) transition-colors duration-300"
             >
-               <span class="text-(--primary-orange)">LUMI</span> WEB
+              <span class="text-(--primary-orange)">LUMI</span> WEB
             </span>
           </a>
 
@@ -31,7 +31,7 @@
               {{ item.label }}
             </a>
             <a
-              href="#kontakt"
+              href="/#kontakt"
               class="text-sm font-medium px-5 py-2 rounded-full border border-(--primary-orange) text-(--primary-orange) hover:bg-(--primary-orange) hover:text-white transition-all duration-300"
             >
               Kontakt
@@ -77,7 +77,7 @@
               {{ item.label }}
             </a>
             <a
-              href="#kontakt"
+              href="/#kontakt"
               @click="menuOpen = false"
               class="mt-2 text-center text-base font-medium px-5 py-3 rounded-full border border-(--primary-orange) text-(--primary-orange) hover:bg-(--primary-orange) hover:text-white transition-all duration-300"
             >
@@ -90,14 +90,17 @@
 
     <!-- Hero Section -->
     <section
-      class="relative flex items-center overflow-hidden bg-white/60 backdrop-blur-xl"
+      class="relative flex items-center overflow-hidden bg-[url('/orange-abstract.jpg')] bg-cover bg-center"
     >
-      <div class="w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-25 pb-8 lg:pb-20">
+      <div class="absolute inset-0 bg-(--primary-beige)/85"></div>
+
+      <div
+        class="relative z-10 w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-25 pb-8 lg:pb-20"
+      >
         <!-- Headline oben zentriert -->
         <div class="text-center mb-10 flex flex-col items-center gap-4">
           <span
-            class="inline-flex items-center gap-2 text-sm font-medium text-(--primary-orange) bg-(--primary-orange)/10
-            px-4 py-1.5 rounded-full tracking-wide"
+            class="inline-flex items-center gap-2 text-sm font-medium text-(--primary-orange) bg-(--primary-orange)/10 px-4 py-1.5 rounded-full tracking-wide"
           >
             <span
               class="w-1.5 h-1.5 rounded-full bg-(--primary-orange) inline-block"
@@ -105,8 +108,7 @@
             Freelance Webdesign
           </span>
           <h1
-            class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
-             font-bold tracking-tight leading-[1.05] text-(--primary-black)"
+            class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] text-(--primary-black)"
           >
             Meine
             <span class="text-(--primary-orange)">Projekte</span>
@@ -136,9 +138,10 @@ const scrolled = ref(false);
 const menuOpen = ref(false);
 
 const navItems = [
-  { label: "Leistungen", href: "/#leistungen" },
   { label: "Über mich", href: "/#about" },
-  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Leistungen", href: "/#leistungen" },
+
+  { label: "Projekte", href: "/projects" },
 ];
 
 const handleScroll = () => {
