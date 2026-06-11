@@ -56,7 +56,7 @@ features: [
   imgDescriptionMobile: "/sunday-header-mobile.png",
   imgLaptopHeader: "",
   imgMobile: "",
-  fullScreenshot: "",
+  fullScreenshot: "/sunday-screenshot-full.png",
 },
   {
     slug: "krautvollglueck",
