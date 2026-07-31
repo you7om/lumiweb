@@ -1,11 +1,15 @@
 <template>
   <div>
     <AllProjects />
+    <Kontakt />
+    <TheFooter />
   </div>
 </template>
 
 <script setup>
 import AllProjects from "~/components/Referenzen/AllProjects.vue";
+import Kontakt from "~/components/Kontakt.vue";
+import TheFooter from "~/components/UI/TheFooter.vue";
 
 definePageMeta({ layout: "referenzen" });
 
