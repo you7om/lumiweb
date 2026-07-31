@@ -16,8 +16,8 @@
             Iuliia Koval<br />
             LumiWeb<br />
             c/o SourceArt<br />
-            Tuttlingerstraße 45<br />
-            78333 Stockach<br />
+            Fritz-Thiele-Straße 3<br />
+            28279 Bremen-Obervieland<br />
             Deutschland
           </p>
         </section>
@@ -46,8 +46,8 @@
           <p class="section-text">
             Iuliia Koval<br />
             c/o SourceArt<br />
-            Tuttlingerstraße 45<br />
-            78333 Stockach
+            Fritz-Thiele-Straße 3<br />
+            28279 Bremen-Obervieland
           </p>
         </section>
 

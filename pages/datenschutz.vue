@@ -172,9 +172,9 @@
             Iuliia Koval<br />
             LumiWeb<br />
             c/o SourceArt <br />
-            Tuttlingerstraße 45
+            Fritz-Thiele-Straße 3
             <br />
-            78333 Stockach <br />Deutschland<br />
+            28279 Bremen-Obervieland <br />Deutschland<br />
             Telefon: +49 176 32615478<br />
             E-Mail:
             <a href="mailto:kontakt@lumiweb.de" class="section-link"

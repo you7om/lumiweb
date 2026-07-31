@@ -1,19 +1,20 @@
 <template>
   <div class="min-h-screen flex items-center justify-center">
     <svg
-      width="555"
-      height="900"
-      viewBox="0 0 185 300"
+      width="590"
+      height="890"
+      viewBox="-6.73 -7.06 198.45 314.12"
+      preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
         <clipPath id="card-clip">
-          <rect width="185" height="300" rx="0" />
+          <rect x="-6.73" y="-7.06" width="198.45" height="314.12" rx="0" />
         </clipPath>
       </defs>
 
-      <!-- Background -->
-      <rect width="185" height="300" fill="#F2E9DD" rx="0" />
+      <!-- Background (mit Anschnitt/Bleed) -->
+      <rect x="-6.73" y="-7.06" width="198.45" height="314.12" fill="#F2E9DD" rx="0" />
 
       <g clip-path="url(#card-clip)">
         <!-- Top-right corner circles -->
@@ -70,7 +71,7 @@
         <text
           x="17"
           y="165"
-          font-family="Arial, sans-serif"
+          font-family="Outfit, sans-serif"
           font-size="7"
           font-weight="400"
           fill="#7A2E1D"
@@ -103,7 +104,7 @@
         <text
           x="29"
           y="205"
-          font-family="Arial, sans-serif"
+          font-family="Outfit, sans-serif"
           font-size="8"
           font-weight="400"
           fill="#7A2E1D"
@@ -123,7 +124,7 @@
         <text
           x="29"
           y="222"
-          font-family="Arial, sans-serif"
+          font-family="Outfit, sans-serif"
           font-size="8"
           font-weight="400"
           fill="#7A2E1D"
@@ -142,7 +143,7 @@
         <text
           x="29"
           y="238"
-          font-family="Arial, sans-serif"
+          font-family="Outfit, sans-serif"
           font-size="8"
           font-weight="400"
           fill="#7A2E1D"
@@ -176,7 +177,7 @@ body {
 
 @media print {
   @page {
-    size: 185mm 300mm;
+    size: 59mm 89mm;
     margin: 0;
   }
 
@@ -185,8 +186,8 @@ body {
   }
 
   svg {
-    width: 185mm;
-    height: 300mm;
+    width: 59mm;
+    height: 89mm;
   }
 }
 </style>

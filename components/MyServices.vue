@@ -2,7 +2,7 @@
   <div class="my-10 lg:my-20" id="leistungen">
     <div class="rounded-2xl w-full 2xl:w-3/4 mx-auto px-4 2xl:px-0">
       <h2>Meine Leistungen</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-2 2xl:gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 2xl:gap-12">
         <div class="serviceCard">
           <h3>ONEPAGER</h3>
 
@@ -80,7 +80,7 @@
           <button class="btn-black my-2" @click="navigateTo('/#kontakt')">Anfragen</button>
         </div>
 
-        <div class="serviceCard">
+        <div class="serviceCard md:col-span-2 lg:col-span-1">
           <h3>APP-ENTWICKLUNG</h3>
           <p>
             Du hast eine Idee für eine App oder brauchst eine digitale Lösung
