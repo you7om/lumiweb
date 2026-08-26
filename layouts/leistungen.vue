@@ -2,17 +2,21 @@
   <div>
     <!-- Header -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 
-      bg-(--primary-beige)/80 backdrop-blur-xl shadow-sm border-b border-(--primary-black)/8 2xl:border-none"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      :class="
+        scrolled
+          ? 'bg-(--primary-beige)/80 backdrop-blur-xl shadow-sm border-b border-(--primary-black)/8 2xl:border-none'
+          : 'bg-transparent'
+      "
     >
-      <div class="w-full 2xl:w-3/4 mx-auto px-5 2xl:px-0">
+      <div class="w-full 2xl:w-3/4 mx-auto px-4 2xl:px-0">
         <div class="flex items-center justify-between h-16 md:h-18">
           <!-- Logo / Name -->
-          <a class="flex items-center gap-2 group cursor-pointer" @click="goToMainPage">
+          <a href="/" class="flex items-center gap-2 group">
             <span
               class="text-xl font-bold tracking-tight text-(--primary-black) group-hover:text-(--primary-orange) transition-colors duration-300"
             >
-               <span class="text-(--primary-orange)">LUMI</span> WEB
+              <span class="text-(--primary-orange)">LUMI</span> WEB
             </span>
           </a>
 
@@ -90,9 +94,11 @@
     >
       <div class="absolute inset-0 bg-(--primary-beige)/85"></div>
 
-      <div class="relative z-10 w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-28 pb-20">
+      <div
+        class="relative z-10 w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-25 pb-8 lg:pb-20"
+      >
         <!-- Headline oben zentriert -->
-        <div class="text-center mb-5 lg:mb-12 flex flex-col items-center gap-4">
+        <div class="text-center mb-8 flex flex-col items-center gap-4">
           <span
             class="inline-flex items-center gap-2 text-sm font-medium text-(--primary-orange) bg-(--primary-orange)/10 px-4 py-1.5 rounded-full tracking-wide"
           >
@@ -104,63 +110,21 @@
           <h1
             class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] text-(--primary-black)"
           >
-            Webseiten,
-            <span class="text-(--primary-orange)">die Vertrauen schaffen</span>
+            Leistungen
+            <span class="text-(--primary-orange)">& Preise</span>
           </h1>
-        </div>
-
-        <!-- Info-Blöcke: Technologien, Für wen, Leistungen, Standort -->
-        <div
-          class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 lg:gap-x-10 justify-items-center text-center max-w-2xl lg:max-w-4xl mx-auto"
-        >
-          <div class="flex flex-col">
-            <p
-              class="text-base font-semibold text-(--primary-orange) uppercase tracking-widest mb-1"
-            >
-              Technologien
-            </p>
-            <p class="text-(--primary-black) leading-relaxed">
-              WordPress · Nuxt.js · Vue.js<br />HTML · CSS · Tailwind
-            </p>
-          </div>
-
-          <div class="flex flex-col">
-            <p
-              class="text-base font-semibold text-(--primary-orange) uppercase tracking-widest mb-1"
-            >
-              Für wen
-            </p>
-            <p class="text-(--primary-black) leading-relaxed">
-              Kleine Unternehmen<br />& Selbstständige
-            </p>
-          </div>
-
-          <div class="flex flex-col">
-            <p
-              class="text-base font-semibold text-(--primary-orange) uppercase tracking-widest mb-1"
-            >
-              Leistungen
-            </p>
-            <p class="text-(--primary-black) leading-relaxed">
-              Onepager · Mehrseitig<br />Responsive · Login-Bereiche
-            </p>
-          </div>
-
-          <div class="flex flex-col">
-            <p
-              class="text-base font-semibold text-(--primary-orange) uppercase tracking-widest mb-1"
-            >
-              Standort
-            </p>
-            <p class="text-(--primary-black) leading-relaxed">
-              Dresden, Deutschland<br />Remote & vor Ort
-            </p>
-          </div>
+          <p
+            class="max-w-2xl text-lg lg:text-xl text-(--primary-black) leading-relaxed"
+          >
+            Ich entwickle Websites und individuelle Web-Apps für dein
+            Unternehmen, vom kompakten Onepager bis zur maßgeschneiderten
+            Lösung.
+          </p>
         </div>
 
         <!-- Buttons unten zentriert -->
-        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-5 lg:mt-12">
-          <a href="#leistungen" class="btn-orange"> Leistungen ansehen </a>
+        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-5">
+          <a href="#leistungen" class="btn-orange"> Zu den Preisen </a>
           <a href="#kontakt" class="btn"> Kontakt aufnehmen </a>
         </div>
       </div>
@@ -176,22 +140,19 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import TheFooter from "~/components/UI/TheFooter.vue";
 
 const scrolled = ref(false);
 const menuOpen = ref(false);
 
 const navItems = [
-  { label: "Über mich", href: "#about" },
+  { label: "Über mich", href: "/#about" },
   { label: "Leistungen", href: "/leistungen" },
   { label: "Projekte", href: "/projects" },
 ];
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 20;
-};
-
-const goToMainPage = () => {
-  navigateTo("/");
 };
 
 onMounted(() => window.addEventListener("scroll", handleScroll));

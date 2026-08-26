@@ -1,8 +1,8 @@
 <template>
   <div>
     <CallToAction />
-    <MyServices />
     <AllProjects />
+    <MyServices />
     <AboutMe />
     <Kontakt />
     <TheFooter />
