@@ -150,7 +150,7 @@ h3 {
   @apply text-4xl font-bold text-(--primary-beige) tracking-tight mt-3;
 }
 .feature-badge {
-  @apply text-base uppercase tracking-[0.2em] text-(--primary-beige)/60 font-semibold;
+  @apply text-base uppercase tracking-[0.2em] text-(--primary-beige) font-semibold;
 }
 .label {
   @apply text-base font-semibold text-(--primary-beige)/90 uppercase tracking-wide;

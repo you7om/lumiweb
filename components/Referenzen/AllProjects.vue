@@ -44,7 +44,7 @@ import { referenzen } from "~/data/referenzen.js";
          group-hover:scale-105 transition-transform duration-500;
 }
 img {
-  @apply w-full h-80;
+  @apply w-full h-88;
 }
 .text-area {
   @apply px-6 py-8 flex flex-col flex-1 gap-3 transition-all duration-300 justify-between;

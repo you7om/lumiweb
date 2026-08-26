@@ -86,7 +86,7 @@
 
     <!-- Hero Section -->
     <section
-      class="relative flex items-center overflow-hidden bg-[url('/orange-abstract.jpg')] bg-cover bg-center"
+      class="relative min-h-[80vh] flex items-center overflow-hidden bg-[url('/orange-abstract.jpg')] bg-cover bg-center"
     >
       <div class="absolute inset-0 bg-(--primary-beige)/85"></div>
 
