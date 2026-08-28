@@ -109,9 +109,17 @@
           </h1>
         </div>
 
+        <!-- Untertext für Mobile -->
+        <p
+          class="lg:hidden text-center text-(--primary-black)/70 leading-relaxed max-w-md mx-auto mb-2"
+        >
+          Moderne Webseiten und individuelle Web-Apps für kleine
+          Unternehmen und Selbstständige – aus Dresden, remote & vor Ort.
+        </p>
+
         <!-- Info-Blöcke: Technologien, Für wen, Leistungen, Standort -->
         <div
-          class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 lg:gap-x-10 justify-items-center text-center max-w-2xl lg:max-w-4xl mx-auto"
+          class="hidden lg:grid lg:grid-cols-4 gap-x-6 gap-y-8 lg:gap-x-10 justify-items-center text-center max-w-2xl lg:max-w-4xl mx-auto"
         >
           <div class="flex flex-col">
             <p

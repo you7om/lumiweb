@@ -20,7 +20,7 @@
                 </li>
                 <li>
                   <span class="material-symbols-outlined">check_small</span>
-                  Schlichtes, modernes Design
+                  Modernes Design
                 </li>
                 <li>
                   <span class="material-symbols-outlined">check_small</span>
@@ -44,23 +44,25 @@
             <div class="priceCards">
               <div class="priceCard">
                 <p class="priceCard-text">
-                  Mit einer vorgefertigten Vorlage und deinen eigenen Texten
-                  und Bildern setze ich eine einfache Website schnell und
-                  unkompliziert um.
+                  Du entscheidest dich für ein bestehendes Design und stellst
+                  deine eigenen Inhalte bereit. Ich kümmere mich um die
+                  Umsetzung.
                 </p>
                 <p class="price">ab 450 €</p>
               </div>
               <div class="priceCard">
                 <p class="priceCard-text">
                   Ich entwickle ein individuelles Design, das zu deinem
-                  Unternehmen und deinen Vorstellungen passt, und übernehme
-                  die komplette Umsetzung deiner Website.
+                  Unternehmen und deinen Vorstellungen passt, und übernehme die
+                  komplette Umsetzung deiner Website.
                 </p>
                 <p class="price">ab 850 €</p>
               </div>
             </div>
 
-            <button class="btn-black mt-6" @click="navigateTo('/#kontakt')">Anfragen</button>
+            <button class="btn-black mt-6" @click="navigateTo('/#kontakt')">
+              Anfragen
+            </button>
           </div>
         </div>
 
@@ -70,9 +72,8 @@
             <h3>MEHRSEITIGE WEBSEITEN</h3>
             <div class="serviceIntro">
               <p>
-                Mehr Seiten, mehr Raum für dein Angebot. Strukturiert
-                aufgebaut, damit dein Auftritt online genauso überzeugend ist
-                wie vor Ort.
+                Mehr Seiten, mehr Raum für dein Angebot. Strukturiert aufgebaut,
+                damit dein Auftritt online genauso überzeugend ist wie vor Ort.
               </p>
               <ul>
                 <li>
@@ -81,8 +82,7 @@
                 </li>
                 <li>
                   <span class="material-symbols-outlined">check_small</span>
-                  Übersichtliche Navigation für eine optimale
-                  Nutzererfahrung
+                  Übersichtliche Navigation für eine optimale Nutzererfahrung
                 </li>
                 <li>
                   <span class="material-symbols-outlined">check_small</span>
@@ -106,23 +106,25 @@
             <div class="priceCards">
               <div class="priceCard">
                 <p class="priceCard-text">
-                  Mit einer vorgefertigten Vorlage und deinen eigenen Texten
-                  und Bildern setze ich deine Website schnell und
-                  unkompliziert um.
+                  Du entscheidest dich für ein bestehendes Design und stellst
+                  deine eigenen Inhalte bereit. Ich kümmere mich um die
+                  Umsetzung.
                 </p>
                 <p class="price">ab 900 €</p>
               </div>
               <div class="priceCard">
                 <p class="priceCard-text">
                   Ich entwickle ein individuelles Design, das zu deinem
-                  Unternehmen und deinen Vorstellungen passt, und übernehme
-                  die komplette Umsetzung deiner Website.
+                  Unternehmen und deinen Vorstellungen passt, und übernehme die
+                  komplette Umsetzung deiner Website.
                 </p>
                 <p class="price">ab 1250 €</p>
               </div>
             </div>
 
-            <button class="btn-black mt-6" @click="navigateTo('/#kontakt')">Anfragen</button>
+            <button class="btn-black mt-6" @click="navigateTo('/#kontakt')">
+              Anfragen
+            </button>
           </div>
         </div>
 
@@ -133,9 +135,8 @@
             <div class="serviceIntro">
               <p>
                 Du hast eine Idee für eine App oder brauchst eine digitale
-                Lösung für dein Business? Ich entwickle eine Web-App, die
-                deine Abläufe vereinfacht und deinen Kunden das Leben
-                leichter macht.
+                Lösung für dein Business? Ich entwickle eine Web-App, die deine
+                Abläufe vereinfacht und deinen Kunden das Leben leichter macht.
               </p>
               <ul>
                 <li>
@@ -158,12 +159,18 @@
                   <span class="material-symbols-outlined">check_small</span>
                   Moderne Technologien wie Vue.js & Nuxt
                 </li>
+                <li>
+                  <span class="material-symbols-outlined">check_small</span>
+                  Effiziente Automatisierung deiner Abläufe
+                </li>
               </ul>
             </div>
 
             <p class="price mt-8">ab 1900 €</p>
 
-            <button class="btn-black mt-6" @click="navigateTo('/#kontakt')">Anfragen</button>
+            <button class="btn-black mt-6" @click="navigateTo('/#kontakt')">
+              Anfragen
+            </button>
           </div>
         </div>
       </div>
@@ -174,16 +181,21 @@
           <h4>Zusätzliche Kosten</h4>
           <ul class="extraCostsList">
             <li>
-              <span class="extraCostsIcon material-symbols-outlined">public</span>
+              <span class="extraCostsIcon material-symbols-outlined"
+                >public</span
+              >
               <p>
-                <span class="font-semibold">Domain & Hosting:</span> ca. 5–10
-                € pro Monat, je nach Anbieter. Damit wird deine Domain
-                registriert und deine Website online gespeichert.
+                <span class="font-semibold">Domain & Hosting:</span> ca. 5–10 €
+                pro Monat, je nach Anbieter. Damit wird deine Domain registriert
+                und deine Website online gespeichert.
               </p>
             </li>
             <li>
               <span class="extraCostsIcon material-symbols-outlined">lock</span>
-              <p><span class="font-semibold">SSL-Zertifikat:</span> meist kostenlos inklusive</p>
+              <p>
+                <span class="font-semibold">SSL-Zertifikat:</span> meist
+                kostenlos inklusive
+              </p>
             </li>
           </ul>
         </div>
@@ -240,7 +252,7 @@ li {
 }
 .priceCard {
   @apply flex flex-col justify-between gap-2 bg-(--primary-beige) border border-(--primary-black)/8 shadow-sm
-  rounded-xl p-5;
+  rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
 }
 .priceCard-text {
   @apply text-(--primary-black) text-lg leading-relaxed mb-0 text-left;

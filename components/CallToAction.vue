@@ -77,7 +77,7 @@ h3 {
 }
 
 .feature-badge {
-  @apply text-xs uppercase tracking-[0.2em] text-(--primary-beige) font-semibold;
+  @apply text-xs tracking-[0.2em] text-(--primary-beige)/70 font-semibold;
 }
 
 .feature-card {

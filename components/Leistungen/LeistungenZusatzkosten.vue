@@ -10,7 +10,12 @@
       <div
         class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-px bg-(--primary-beige)/10 border border-(--primary-beige)/20 rounded-lg overflow-hidden"
       >
-        <div class="feature-card" v-for="item in extras" :key="item.title">
+        <div
+          class="feature-card"
+          :class="{ 'feature-card--mobile-only': item.mobileOnly }"
+          v-for="item in extras"
+          :key="item.title"
+        >
           <span class="material-symbols-outlined feature-icon">{{ item.icon }}</span>
           <p class="feature-title">{{ item.title }}</p>
           <p class="feature-text">{{ item.desc }}</p>
@@ -67,6 +72,12 @@ const extras = [
     title: "Wartung & Pflege nach Launch",
     desc: "Technische Updates, Änderungen und laufende Betreuung deiner Website.",
   },
+  {
+    icon: "search",
+    title: "SEO-Optimierung",
+    desc: "Bessere Sichtbarkeit deiner Website in Suchmaschinen wie Google.",
+    mobileOnly: true,
+  },
 ];
 </script>
 
@@ -79,6 +90,12 @@ h3 {
 
 .feature-card {
   @apply flex flex-col gap-3 p-4 2xl:p-12 bg-(--primary-orange) hover:bg-(--primary-beige)/5 transition-colors duration-300;
+}
+
+@media (min-width: 768px) {
+  .feature-card--mobile-only {
+    display: none;
+  }
 }
 
 .feature-icon {

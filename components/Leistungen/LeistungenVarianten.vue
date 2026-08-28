@@ -49,7 +49,7 @@
 }
 .variantCard {
   @apply flex flex-col gap-4 bg-(--primary-beige) border border-(--primary-black)/8 shadow-sm
-  rounded-2xl p-6 lg:p-8;
+  rounded-2xl p-6 lg:p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
 }
 .variantCard--highlight {
   @apply border-(--primary-orange)/30;
