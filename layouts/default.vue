@@ -111,7 +111,7 @@
 
         <!-- Untertext für Mobile -->
         <p
-          class="lg:hidden text-center text-(--primary-black)/70 leading-relaxed max-w-md mx-auto mb-2"
+          class="lg:hidden text-lg text-center text-(--primary-black)/70 leading-relaxed max-w-md mx-auto mb-2"
         >
           Moderne Webseiten und individuelle Web-Apps für kleine
           Unternehmen und Selbstständige – aus Dresden, remote & vor Ort.
@@ -168,7 +168,7 @@
 
         <!-- Buttons unten zentriert -->
         <div class="flex flex-col sm:flex-row justify-center gap-3 mt-5 lg:mt-12">
-          <a href="#leistungen" class="btn-orange"> Leistungen ansehen </a>
+          <a href="/leistungen" class="btn-orange"> Leistungen ansehen </a>
           <a href="#kontakt" class="btn"> Kontakt aufnehmen </a>
         </div>
       </div>

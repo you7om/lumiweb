@@ -1,20 +1,20 @@
 <template>
   <div>
     <MyServices />
-    <LeistungenPreisfaktoren />
-    <LeistungenVarianten />
-    <LeistungenZusatzkosten />
-    <LeistungenFAQ />
+    <ServicesAdditionalCosts />
+    <ServicesComparisonTable />
+    <ServicesPricingFactors />
+    <ServicesFAQ />
     <Kontakt />
   </div>
 </template>
 
 <script setup>
-import LeistungenPreisfaktoren from "~/components/Leistungen/LeistungenPreisfaktoren.vue";
-import LeistungenVarianten from "~/components/Leistungen/LeistungenVarianten.vue";
-import LeistungenZusatzkosten from "~/components/Leistungen/LeistungenZusatzkosten.vue";
-import LeistungenFAQ from "~/components/Leistungen/LeistungenFAQ.vue";
-import MyServices from "~/components/MyServices.vue";
+import ServicesPricingFactors from "~/components/Services/ServicesPricingFactors.vue";
+import ServicesAdditionalCosts from "~/components/Services/ServicesAdditionalCosts.vue";
+import ServicesFAQ from "~/components/Services/ServicesFAQ.vue";
+import MyServices from "~/components/Services/MyServices.vue";
+import ServicesComparisonTable from "~/components/Services/ServicesComparisonTable.vue";
 import Kontakt from "~/components/Kontakt.vue";
 
 definePageMeta({

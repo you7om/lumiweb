@@ -1,8 +1,8 @@
 <template>
   <div>
     <CallToAction />
+    <ServicesOverview />
     <AllProjects />
-    <MyServices />
     <AboutMe />
     <Kontakt />
     <TheFooter />
@@ -11,7 +11,7 @@
 
 <script setup>
 import TheFooter from "~/components/UI/TheFooter.vue";
-import MyServices from "~/components/MyServices.vue";
+import ServicesOverview from "~/components/ServicesOverview.vue";
 import AboutMe from "~/components/AboutMe.vue";
 import CallToAction from "~/components/CallToAction.vue";
 import AllProjects from "~/components/Referenzen/AllProjects.vue";
