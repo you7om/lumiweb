@@ -58,7 +58,7 @@
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
-                      Impressum & Datenschutz
+                      Impressum & Datenschutz (Vorlage)
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
@@ -108,7 +108,7 @@
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
-                      Impressum & Datenschutz
+                      Impressum & Datenschutz (Vorlage)
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
@@ -179,7 +179,7 @@
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
-                      Impressum & Datenschutz
+                      Impressum & Datenschutz (Vorlage)
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
@@ -227,7 +227,7 @@
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
-                      Impressum & Datenschutz
+                      Impressum & Datenschutz (Vorlage)
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
@@ -314,6 +314,15 @@
               <p>
                 <span class="font-semibold">SSL-Zertifikat:</span> meist
                 kostenlos inklusive
+              </p>
+            </li>
+            <li>
+              <span class="extraCostsIcon material-symbols-outlined">gavel</span>
+              <p>
+                <span class="font-semibold">Impressum & Datenschutz:</span>
+                Ich erstelle beides als unverbindliche Vorlage und binde es ein.
+                Eine Rechtsberatung ist nicht enthalten. Für eine rechtliche
+                Prüfung wende dich bitte an eine fachkundige Stelle.
               </p>
             </li>
           </ul>

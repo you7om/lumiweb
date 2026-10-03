@@ -43,7 +43,7 @@
               <td>✓</td>
             </tr>
             <tr>
-              <td>Impressum & Datenschutz</td>
+              <td>Impressum & Datenschutz (Vorlage)</td>
               <td>✓</td>
               <td>✓</td>
               <td>✓</td>

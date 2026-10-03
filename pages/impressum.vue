@@ -15,7 +15,7 @@
           <p class="section-text">
             Iuliia Koval<br />
             LumiWeb<br />
-            c/o SourceArt<br />
+            c/o SourceArt · VM-00002522<br />
             Fritz-Thiele-Straße 3<br />
             28279 Bremen-Obervieland<br />
             Deutschland
@@ -45,7 +45,7 @@
           </h2>
           <p class="section-text">
             Iuliia Koval<br />
-            c/o SourceArt<br />
+            c/o SourceArt · VM-00002522<br />
             Fritz-Thiele-Straße 3<br />
             28279 Bremen-Obervieland
           </p>

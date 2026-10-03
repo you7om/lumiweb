@@ -173,6 +173,13 @@
             übernimmt keine Haftung für Inhalte, die vom Auftraggeber zur Verfügung gestellt
             wurden.
           </p>
+          <p class="section-text">
+            Sofern die Auftragnehmerin Impressum, Datenschutzerklärung oder andere Rechtstexte
+            erstellt oder einbindet, handelt es sich um unverbindliche Vorlagen, die teilweise
+            mithilfe automatisierter Werkzeuge erstellt werden. Eine Rechtsberatung findet nicht
+            statt. Die Verantwortung für die inhaltliche und rechtliche Richtigkeit dieser Texte
+            liegt beim Auftraggeber. Eine Prüfung durch eine fachkundige Stelle wird empfohlen.
+          </p>
         </section>
 
         <hr class="section-hr" />
