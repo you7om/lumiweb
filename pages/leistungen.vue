@@ -1,7 +1,7 @@
 <template>
   <div>
     <MyServices />
-    <ServicesAdditionalCosts />
+    <ServicesWhyMe />
     <ServicesComparisonTable />
     <ServicesPricingFactors />
     <ServicesFAQ />
@@ -11,7 +11,7 @@
 
 <script setup>
 import ServicesPricingFactors from "~/components/Services/ServicesPricingFactors.vue";
-import ServicesAdditionalCosts from "~/components/Services/ServicesAdditionalCosts.vue";
+import ServicesWhyMe from "~/components/Services/ServicesWhyMe.vue";
 import ServicesFAQ from "~/components/Services/ServicesFAQ.vue";
 import MyServices from "~/components/Services/MyServices.vue";
 import ServicesComparisonTable from "~/components/Services/ServicesComparisonTable.vue";

@@ -294,36 +294,39 @@
         </div>
       </div>
 
-      <div class="extraCostsBox">
+      <div class="extrasBox">
         <div class="serviceSection-overlay"></div>
         <div class="serviceSection-content">
-          <h4>Zusätzliche Kosten</h4>
-          <ul class="extraCostsList">
-            <li>
-              <span class="extraCostsIcon material-symbols-outlined"
-                >public</span
-              >
-              <p>
-                <span class="font-semibold">Domain & Hosting:</span> ca. 5–10 €
-                pro Monat, je nach Anbieter. Damit wird deine Domain registriert
-                und deine Website online gespeichert.
-              </p>
+          <h3>Zusätzliche Kosten</h3>
+          <ul class="extrasList">
+            <li class="extrasItem" v-for="item in extraCosts" :key="item.title">
+              <span class="extraCostsIcon material-symbols-outlined">{{
+                item.icon
+              }}</span>
+              <div class="extrasItem-body">
+                <p class="extrasItem-title">{{ item.title }}</p>
+                <p class="extrasItem-text">{{ item.desc }}</p>
+              </div>
+              <p class="extrasItem-price">{{ item.price }}</p>
             </li>
-            <li>
-              <span class="extraCostsIcon material-symbols-outlined">lock</span>
-              <p>
-                <span class="font-semibold">SSL-Zertifikat:</span> meist
-                kostenlos inklusive
-              </p>
-            </li>
-            <li>
-              <span class="extraCostsIcon material-symbols-outlined">gavel</span>
-              <p>
-                <span class="font-semibold">Impressum & Datenschutz:</span>
-                Ich erstelle beides als unverbindliche Vorlage und binde es ein.
-                Eine Rechtsberatung ist nicht enthalten. Für eine rechtliche
-                Prüfung wende dich bitte an eine fachkundige Stelle.
-              </p>
+          </ul>
+        </div>
+      </div>
+
+      <div class="extrasBox">
+        <div class="serviceSection-overlay"></div>
+        <div class="serviceSection-content">
+          <h3>Zusätzliche Leistungen</h3>
+          <ul class="extrasList">
+            <li class="extrasItem" v-for="item in extras" :key="item.title">
+              <span class="extraCostsIcon material-symbols-outlined">{{
+                item.icon
+              }}</span>
+              <div class="extrasItem-body">
+                <p class="extrasItem-title">{{ item.title }}</p>
+                <p class="extrasItem-text">{{ item.desc }}</p>
+              </div>
+              <p class="extrasItem-price">{{ item.price }}</p>
             </li>
           </ul>
         </div>
@@ -332,7 +335,97 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const extraCosts = [
+  {
+    icon: "public",
+    title: "Domain & Hosting",
+    desc: "Je nach Anbieter. Damit wird deine Domain registriert und deine Website online gespeichert.",
+    price: "ca. 5–10 € / Monat",
+  },
+  {
+    icon: "mail",
+    title: "E-Mail-Postfach",
+    desc: "Eine eigene Adresse wie info@deinedomain.de. Beim Hosting oft schon dabei.",
+    price: "oft inklusive",
+  },
+  {
+    icon: "lock",
+    title: "SSL-Zertifikat",
+    desc: "Verschlüsselte Verbindung für deine Website.",
+    price: "meist inklusive",
+  },
+  {
+    icon: "gavel",
+    title: "Impressum & Datenschutz",
+    desc: "Ich erstelle eine Vorlage und binde sie technisch ein. Ich bin keine Anwältin und biete keine Rechtsberatung.",
+    price: "Vorlage inklusive",
+  },
+];
+
+const extras = [
+  {
+    icon: "view_agenda",
+    title: "Zusätzlicher Inhaltsblock",
+    desc: "z. B. Über mich, Leistungen, Referenzen, Galerie, FAQ",
+    price: "50 €",
+  },
+  {
+    icon: "post_add",
+    title: "Zusätzliche Seite",
+    desc: "Mehr Raum für dein Angebot, deine Themen oder Unterseiten.",
+    price: "80 €",
+  },
+  {
+    icon: "translate",
+    title: "Weitere Sprache",
+    desc: "Deine Website in mehreren Sprachen umsetzen.",
+    price: "ab 100 €",
+  },
+  {
+    icon: "build",
+    title: "Wartung & Pflege",
+    desc: "Technische Updates, Änderungen und laufende Betreuung deiner Website.",
+    price: "ab 20 € / Monat",
+  },
+  {
+    icon: "edit",
+    title: "Website selbst bearbeiten (CMS)",
+    desc: "Inhalte jederzeit selbst bearbeiten, ganz ohne Programmierkenntnisse.",
+    price: "ab 50 €",
+  },
+  {
+    icon: "assignment",
+    title: "Individuelles Formular",
+    desc: "Individuelle Formulare für spezielle Anfragen.",
+    price: "ab 80 €",
+  },
+  {
+    icon: "lock_person",
+    title: "Login-Bereich",
+    desc: "Ein geschützter Bereich für deine Kunden oder Mitglieder.",
+    price: "ab 300 €",
+  },
+  {
+    icon: "calendar_month",
+    title: "Buchungssystem",
+    desc: "Deine Kunden buchen direkt auf der Website.",
+    price: "ab 250 €",
+  },
+  {
+    icon: "article",
+    title: "Blog",
+    desc: "Aktuelle News, Tipps oder Updates regelmäßig veröffentlichen.",
+    price: "ab 100 €",
+  },
+  {
+    icon: "search",
+    title: "SEO-Grundeinrichtung",
+    desc: "Seitentitel und Beschreibungen für Google einrichten und deine Website bei Google zur Aufnahme anmelden.",
+    price: "ab 50 €",
+  },
+];
+</script>
 
 <style scoped>
 @reference "tailwindcss";
@@ -402,22 +495,44 @@ li {
   @apply text-xl 2xl:text-2xl mt-1;
 }
 
-.extraCostsBox {
-  @apply relative overflow-hidden rounded-2xl bg-[url('/orange-abstract.jpg')] bg-cover bg-center p-6 md:px-12 md:py-10 mt-8 2xl:mt-12;
-}
-.extraCostsBox h4 {
-  @apply text-lg font-semibold text-left text-(--primary-orange) mb-6 tracking-widest uppercase;
-}
-.extraCostsList {
-  @apply text-left grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10;
-}
-.extraCostsList li {
-  @apply flex gap-4 items-center;
-}
-.extraCostsList p {
-  @apply text-(--primary-black) text-base leading-relaxed mb-0 text-left;
-}
 .extraCostsIcon {
   @apply shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-(--primary-orange)/10 text-xl;
+}
+
+.extrasBox {
+  @apply relative overflow-hidden rounded-2xl bg-[url('/orange-abstract.jpg')] bg-cover bg-center p-4 md:p-10 lg:p-12 mt-8 2xl:mt-12;
+}
+.extrasBox h3 {
+  @apply text-xl sm:text-2xl;
+}
+.extrasList {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-x-16 2xl:gap-x-24 gap-y-0 bg-(--primary-beige) border border-(--primary-black)/8
+  shadow-sm rounded-xl px-4 lg:px-8 py-1 lg:py-2;
+}
+/* Mobil: Preis unter dem Text, ab sm rechts daneben */
+.extrasList .extrasItem {
+  @apply grid grid-cols-[auto_1fr] sm:grid-cols-[auto_1fr_auto] gap-x-4 gap-y-1 items-start sm:items-center
+  py-4 border-b border-(--primary-black)/8;
+}
+/* Keine Trennlinie unter der letzten Zeile */
+.extrasList .extrasItem:last-child {
+  @apply border-b-0;
+}
+@media (min-width: 64rem) {
+  .extrasList .extrasItem:nth-last-child(2):nth-child(odd) {
+    border-bottom-width: 0;
+  }
+}
+.extrasItem-body {
+  @apply flex flex-col gap-0.5 min-w-0;
+}
+.extrasItem-title {
+  @apply font-semibold text-base lg:text-lg leading-snug;
+}
+.extrasItem-text {
+  @apply text-(--primary-black)/70 text-sm lg:text-base leading-snug;
+}
+.extrasItem-price {
+  @apply col-start-2 sm:col-start-auto text-(--primary-orange) font-bold text-base lg:text-lg text-left sm:text-right whitespace-nowrap;
 }
 </style>

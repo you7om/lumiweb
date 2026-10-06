@@ -35,6 +35,10 @@ const faqs = [
     a: "Die genannten Preise sind Einstiegspreise für einen bestimmten Umfang. Wenn während der Planung klar wird, dass deine Website mehr Seiten, Inhalte oder Funktionen benötigt, bespreche ich den zusätzlichen Aufwand mit dir und passe das Angebot entsprechend an.",
   },
   {
+    q: "Erstellst du auch Impressum und Datenschutzerklärung?",
+    a: "Ich erstelle für beides eine Vorlage und binde sie technisch in deine Website ein. Ich bin aber keine Anwältin und darf keine Rechtsberatung geben. Für eine rechtliche Prüfung wende dich bitte an eine fachkundige Stelle, zum Beispiel eine Anwältin oder einen Anwalt.",
+  },
+  {
     q: "Wie lange dauert die Umsetzung?",
     a: "Eine einfache Website kann häufig innerhalb von 1–2 Wochen umgesetzt werden, sofern alle Inhalte rechtzeitig vorliegen. Umfangreichere oder individuell gestaltete Projekte können entsprechend länger dauern.",
   },
