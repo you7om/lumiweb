@@ -496,3 +496,21 @@ onBeforeUnmount(() => revealObserver?.disconnect());
   }
 }
 </style>
+
+<!-- Nicht scoped: betrifft Header und Body außerhalb der Komponente. Steht im CSS der Seite,
+     damit es schon im ersten Bild gilt, bevor JavaScript läuft (sonst sieht man beim Laden
+     kurz eine harte Kante unter dem Header, bis die Formen bereit sind). -->
+<style>
+/* Hintergrund von Anfang an im Beige der Formen (BACKGROUND in lumiFormations.js),
+   damit beim Einblenden des Canvas kein Farbsprung entsteht. Sobald die Formen aktiv sind,
+   macht LumiShapes den Body durchsichtig. */
+body:has(.home-page):not(.lumi-shapes-active) {
+  background-color: #f4e8db;
+}
+
+/* Header läuft unten weich ins Beige aus */
+body:has(.home-page) .hero-blobs {
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 140px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 140px), transparent);
+}
+</style>
