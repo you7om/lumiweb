@@ -3,7 +3,7 @@
     <!-- Header -->
     <header
       class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 
-      bg-(--primary-beige)/80 backdrop-blur-xl shadow-sm border-b border-(--primary-black)/8 2xl:border-none"
+      bg-(--primary-cream)/75 backdrop-blur-xl shadow-sm border-b border-(--primary-black)/8 2xl:border-none"
     >
       <div class="w-full 2xl:w-3/4 mx-auto px-5 2xl:px-0">
         <div class="flex items-center justify-between h-16 md:h-18">
@@ -60,7 +60,7 @@
       <transition name="menu">
         <div
           v-if="menuOpen"
-          class="md:hidden bg-(--primary-beige)/95 backdrop-blur-xl border-t border-(--primary-black)/8 px-5 pb-6 pt-4"
+          class="md:hidden bg-(--primary-cream)/95 backdrop-blur-xl border-t border-(--primary-black)/8 px-5 pb-6 pt-4"
         >
           <nav class="flex flex-col gap-4">
             <a
@@ -86,9 +86,9 @@
 
     <!-- Hero Section -->
     <section
-      class="relative min-h-[80vh] flex items-center overflow-hidden bg-[url('/orange-abstract.jpg')] bg-cover bg-center"
+      class="relative min-h-[80vh] flex items-center overflow-hidden"
     >
-      <div class="absolute inset-0 bg-(--primary-beige)/85"></div>
+      <HeroBlobs />
 
       <div class="relative z-10 w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-28 pb-20">
         <!-- Headline oben zentriert -->
