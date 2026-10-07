@@ -77,7 +77,7 @@ h3 {
 }
 
 .feature-badge {
-  @apply text-xs tracking-[0.2em] text-(--primary-beige)/70 font-semibold;
+  @apply text-xs tracking-[0.2em] text-(--primary-beige) font-semibold;
 }
 
 .feature-card {
@@ -93,6 +93,6 @@ h3 {
 }
 
 .feature-text {
-  @apply text-(--primary-beige)/80 text-base lg:text-lg lg:leading-relaxed;
+  @apply text-(--primary-beige) text-base lg:text-lg lg:leading-relaxed;
 }
 </style>

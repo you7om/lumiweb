@@ -150,28 +150,28 @@ h3 {
   @apply text-4xl font-bold text-(--primary-beige) tracking-tight mt-3;
 }
 .feature-badge {
-  @apply text-base tracking-[0.2em] text-(--primary-beige)/70 font-semibold;
+  @apply text-base tracking-[0.2em] text-(--primary-beige) font-semibold;
 }
 .label {
-  @apply text-base font-semibold text-(--primary-beige)/90 uppercase tracking-wide;
+  @apply text-base font-semibold text-(--primary-beige) uppercase tracking-wide;
 }
 .email-box {
   @apply flex-1 flex flex-col items-center justify-center sm:items-start gap-2
          bg-white/10 border border-white/20 rounded-xl px-6 py-4 w-full md:w-2/4;
 }
 .email-box-label {
-  @apply text-base uppercase tracking-widest text-(--primary-beige)/80 font-semibold mx-auto;
+  @apply text-base uppercase tracking-widest text-(--primary-beige) font-semibold mx-auto;
 }
 .email-box-link {
   @apply text-(--primary-beige) font-semibold text-base underline underline-offset-4
          hover:text-white transition-colors duration-200 mx-auto;
 }
 .divider-or {
-  @apply  text-sm text-(--primary-beige)/60 tracking-widest 
+  @apply  text-sm text-(--primary-beige) tracking-widest 
          shrink-0;
 }
 .form-hint {
-  @apply flex-1 text-center  text-(--primary-beige)/80 text-base mx-auto w-2/4 uppercase font-semibold;
+  @apply flex-1 text-center  text-(--primary-beige) text-base mx-auto w-2/4 uppercase font-semibold;
 }
 .input-field {
   @apply w-full bg-white/10 border border-white/20 rounded-xl px-5 py-3.5

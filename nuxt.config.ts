@@ -28,6 +28,7 @@ export default defineNuxtConfig({
       "/impressum",
       "/cookie-hinweise",
       "/rechnung-der-bunte-laden",
+      "/lab",
     ],
   },
 
