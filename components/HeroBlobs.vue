@@ -262,6 +262,8 @@ const props = defineProps({
   wobble: { type: Number, default: 12 },
   // Wie weit die Formen der Maus ausweichen (in Rastereinheiten, 0 = aus)
   repel: { type: Number, default: 50 },
+  // Wie schnell die Formen auf die Maus reagieren (1 = normal, kleiner = träger und sanfter)
+  mouseEase: { type: Number, default: 1 },
 });
 
 // Eindeutige IDs, falls die Komponente mehrfach auf einer Seite steht
@@ -623,9 +625,10 @@ function follow(current, target, ease, dt) {
 
 // Formen weichen der Maus aus: je näher, desto weiter weg, träge wie im Wasser
 function updatePush(dt) {
-  mouse.x = follow(mouse.x, mouse.tx, 0.08, dt);
-  mouse.y = follow(mouse.y, mouse.ty, 0.08, dt);
-  mouse.strength = follow(mouse.strength, mouse.target, 0.04, dt);
+  const k = props.mouseEase;
+  mouse.x = follow(mouse.x, mouse.tx, 0.08 * k, dt);
+  mouse.y = follow(mouse.y, mouse.ty, 0.08 * k, dt);
+  mouse.strength = follow(mouse.strength, mouse.target, 0.04 * k, dt);
 
   for (const layer of layers) {
     let tx = 0;
@@ -639,8 +642,8 @@ function updatePush(dt) {
       tx = (dx / dist) * amount;
       ty = (dy / dist) * amount;
     }
-    layer.push.x = follow(layer.push.x, tx, 0.025, dt);
-    layer.push.y = follow(layer.push.y, ty, 0.025, dt);
+    layer.push.x = follow(layer.push.x, tx, 0.025 * k, dt);
+    layer.push.y = follow(layer.push.y, ty, 0.025 * k, dt);
   }
 }
 

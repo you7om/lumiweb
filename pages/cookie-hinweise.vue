@@ -129,7 +129,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: "Cookie-Hinweise – LUMI Web",
+  title: "Cookie-Hinweise – LumiWeb",
   description: "Cookie-Hinweise von LumiWeb – Julia Koval, Webentwicklung Dresden.",
   robots: "noindex, follow",
 });

@@ -1,5 +1,5 @@
 <template>
-  <!-- Liegt fest hinter der ganzen Seite. Sektionen mit eigenem Hintergrund (z. B. rot) decken sie ab. -->
+  <!-- Liegt fest hinter der ganzen Seite. Sektionen mit eigenem Hintergrund decken sie ab. -->
   <div class="lumi-shapes" aria-hidden="true">
     <canvas ref="canvasEl" class="lumi-shapes__layer"></canvas>
 
@@ -13,7 +13,7 @@
         width="100%"
         height="100%"
         filter="url(#lumi-shapes-grain)"
-        opacity="0.12"
+        opacity="0.06"
         style="mix-blend-mode: multiply"
       />
     </svg>
@@ -25,25 +25,20 @@
 // Sektionen werden im Markup mit data-lumi="<figur>" markiert:
 //   ohne data-lumi-top: Figur ist erreicht, wenn die Sektion mittig im Bild steht
 //   data-lumi-top="0.6": Figur ist erreicht, wenn die Oberkante der Sektion bei 60 % der Bildhöhe steht
-// Orange Sektionen bekommen zusätzlich data-lumi-red: Dort zeichnet das Canvas den orangenen Hintergrund
-// und zeigt die Formen Ton in Ton.
 // Der Seitenanfang zeigt immer die Figur "hero" (verdeckt vom echten Header, der beim Scrollen ausblendet).
 import { ref, onMounted, onBeforeUnmount } from "vue";
-import { formations, COUNT, AURA_COUNT, BACKGROUND, RED_BACKGROUND } from "~/lib/lumiFormations.js";
+import { formations, COUNT, AURA_COUNT, BACKGROUND } from "~/lib/lumiFormations.js";
 
 const props = defineProps({
   // Tempo der Schwebe-Bewegung (1 = normal)
-  speed: { type: Number, default: 0.75 },
+  speed: { type: Number, default: 0.3 },
   // Wie stark die Formen wie im Wasser wabern (in Rastereinheiten)
-  wobble: { type: Number, default: 12 },
+  wobble: { type: Number, default: 10 },
   // Wie weit die Formen der Maus ausweichen (in Rastereinheiten, 0 = aus)
-  repel: { type: Number, default: 50 },
-  // Helligkeit der Glut in den orangenen Sektionen: Anteil der Formfarbe, der ins Orange gemischt wird.
-  // 0 = keine Glut, 0.5 = doppelt so hell wie jetzt. Mehr senkt den Kontrast des Texts.
-  redGlow: { type: Number, default: 0.25 },
+  repel: { type: Number, default: 28 },
   // Wie schnell die Formen dem Scrollen folgen: Anteil des Abstands, der pro Bild aufgeholt wird.
   // Kleiner = träger und sanfter (0.03 ≈ eine halbe Sekunde Nachlauf), größer = direkter.
-  scrollEase: { type: Number, default: 0.03 },
+  scrollEase: { type: Number, default: 0.009 },
 });
 
 const VIEW_W = 1500;
@@ -83,9 +78,7 @@ uniform float uSoft;
 uniform float uOpacity;
 uniform float uTime;
 uniform float uWobble;
-uniform vec4 uRed;      // orange Sektionen: oben/unten, oben/unten (CSS-Pixel)
-uniform vec3 uRedBg;
-uniform float uRedGlow;
+uniform float uHeroCover; // Deckkraft des Headers (0 = ausgeblendet oder nicht vorhanden)
 uniform vec2 uMouse;
 uniform float uPush;
 uniform float uPushRadius;
@@ -110,7 +103,6 @@ float smin(float a, float b, float k) {
 
 void main() {
   vec2 p = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y) / uPx;
-  float screenY = p.y;
 
   // Maus: Farbe rund um den Zeiger wird weich nach außen verdrängt
   vec2 dm = p - uMouse;
@@ -156,14 +148,13 @@ void main() {
 
   vec3 shape = wsum > 0.0 ? col / wsum : bg;
   float alpha = 1.0 - smoothstep(-uSoft, uSoft, field);
-  // Orange Sektionen: dieselben Formen, Ton in Ton als warme Glut auf dem Orange
-  bool red = (screenY >= uRed.x && screenY < uRed.y) || (screenY >= uRed.z && screenY < uRed.w);
-  if (red) {
-    vec3 redBg = uRedBg + (bg - uBg) * 0.6;
-    gl_FragColor = vec4(mix(redBg, mix(uRedBg, shape, uRedGlow), alpha * uOpacity * 0.85), 1.0);
-  } else {
-    gl_FragColor = vec4(mix(bg, shape, alpha * uOpacity), 1.0);
-  }
+  // Solange der Header (HeroBlobs) zu sehen ist, zeigt das Canvas keine Formen: Der Header malt dieselben
+  // Kreise in anderem Maßstab, sonst erscheinen sie doppelt. Erst wenn der Header fast ausgeblendet ist,
+  // blenden die Formen hier ein, so überlappen sich beide nie.
+  alpha *= 1.0 - smoothstep(0.0, 0.35, uHeroCover);
+
+  gl_FragColor = vec4(mix(bg, shape, alpha * uOpacity), 1.0);
+
 }`;
 
 // ===== Figuren vorbereiten =====
@@ -183,7 +174,7 @@ function flatten(formation) {
       e.hl[0], e.hl[1],
     );
   }
-  out.push(formation.merge, formation.soft, formation.opacity);
+  out.push(formation.merge, formation.soft, formation.opacity, formation.drift ?? 1);
   for (const c of formation.aura) out.push(c.x, c.y, c.r, c.alpha, ...hexToRgb(c.color));
   return out;
 }
@@ -204,10 +195,8 @@ let lastNow = 0;
 let time = 0;
 let reducedMotion = false;
 let heroOpacity = -1;
-let redTimer = null;
 
 let anchors = []; // [{ scroll, flat }]
-let redSections = []; // Sektionen mit data-lumi-red
 let progress = 0;
 let anchorTimer = null;
 let bodyObserver = null;
@@ -232,11 +221,9 @@ const bufAuraCol = new Float32Array(AURA_COUNT * 3);
 onMounted(() => {
   reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!init()) return;
-  // Erst jetzt den beigen Body-Hintergrund ausblenden: ohne WebGL bleibt die Seite wie gehabt
+  // Erst jetzt den beigen Body-Hintergrund ausblenden: ohne WebGL bleibt die Seite wie gehabt.
+  // Das Canvas ist bereits gezeichnet.
   document.body.classList.add("lumi-shapes-active");
-  // Orange Sektionen erst durchsichtig machen, wenn der beige Body ausgeblendet ist (0,8 s).
-  // Vorher zeigen sie ihr eigenes Orange – so blitzt dort nie Beige auf.
-  redTimer = setTimeout(() => document.body.classList.add("lumi-shapes-red"), 850);
 });
 
 onBeforeUnmount(() => {
@@ -247,8 +234,7 @@ onBeforeUnmount(() => {
   window.removeEventListener("scroll", requestFrame);
   window.removeEventListener("pointermove", onPointerMove);
   document.documentElement.removeEventListener("pointerleave", onPointerLeave);
-  clearTimeout(redTimer);
-  document.body.classList.remove("lumi-shapes-active", "lumi-shapes-red");
+  document.body.classList.remove("lumi-shapes-active");
   setHeroOpacity(1);
   gl?.getExtension("WEBGL_lose_context")?.loseContext();
   gl = null;
@@ -274,13 +260,11 @@ function init() {
   for (const name of [
     "Res", "Px", "Unit", "A", "B", "C", "D", "E", "Aura", "AuraCol", "Bg",
     "Merge", "Soft", "Opacity", "Time", "Wobble", "Mouse", "Push", "PushRadius",
-    "Red", "RedBg", "RedGlow",
+    "HeroCover",
   ]) {
     u[name] = gl.getUniformLocation(program, `u${name}`);
   }
   gl.uniform3fv(u.Bg, bgColor);
-  gl.uniform3fv(u.RedBg, hexToRgb(RED_BACKGROUND));
-  gl.uniform1f(u.RedGlow, props.redGlow);
 
   resize();
   computeAnchors();
@@ -294,14 +278,19 @@ function init() {
   // Sektionshöhen ändern sich z. B. wenn Bilder nachladen
   bodyObserver = new ResizeObserver(() => {
     clearTimeout(anchorTimer);
-    anchorTimer = setTimeout(computeAnchors, 150);
+    anchorTimer = setTimeout(() => {
+      computeAnchors();
+      requestFrame();
+    }, 150);
   });
   // Nicht body beobachten: der ist per CSS 100 % hoch und wächst nicht mit dem Inhalt
   bodyObserver.observe(document.getElementById("__nuxt") ?? document.documentElement);
   document.querySelectorAll("[data-lumi]").forEach((el) => bodyObserver.observe(el));
 
-  // Erstes Bild sofort zeichnen, damit nie ein leeres Canvas durchscheint
+  // Erstes Bild sofort zeichnen, damit nie ein leeres Canvas durchscheint.
+  // updateHero vorher, damit die Header-Deckkraft schon stimmt und keine Formen doppelt aufblitzen.
   blend();
+  updateHero();
   draw(0);
 
   lastNow = performance.now();
@@ -351,7 +340,6 @@ function computeAnchors() {
     list.push({ scroll: Math.max(scroll, list[list.length - 1].scroll + 1), flat });
   });
   anchors = list;
-  redSections = [...document.querySelectorAll("[data-lumi-red]")];
 }
 
 function targetProgress() {
@@ -366,10 +354,11 @@ function targetProgress() {
 
 // Zwischen zwei Ankern: an den Enden kurz ruhen, dazwischen über fast die ganze Strecke weich überblenden.
 // Je kleiner HOLD, desto länger und sanfter der Übergang.
-const HOLD = 0.04;
+const HOLD = 0.02;
 function ease(t) {
   const x = Math.min(Math.max((t - HOLD) / (1 - 2 * HOLD), 0), 1);
-  return x * x * (3 - 2 * x);
+  // Quintische Kurve: beginnt und endet noch weicher als smoothstep
+  return x * x * x * (x * (x * 6 - 15) + 10);
 }
 
 function blend() {
@@ -424,7 +413,7 @@ function heroCovers() {
 // Der echte Header (HeroBlobs) bleibt unverändert sichtbar und blendet erst beim
 // Losscrollen aus – dahinter fließen die Lumi-Formen weiter zur nächsten Figur.
 function updateHero() {
-  const t = Math.min(Math.max((progress - 0.05) / 0.55, 0), 1);
+  const t = Math.min(Math.max((progress - 0.05) / 0.7, 0), 1);
   setHeroOpacity(1 - t * t * (3 - 2 * t));
 }
 
@@ -449,9 +438,9 @@ function viewport() {
 }
 
 function updateMouse(dt) {
-  mouse.x = follow(mouse.x, mouse.tx, 0.08, dt);
-  mouse.y = follow(mouse.y, mouse.ty, 0.08, dt);
-  mouse.strength = follow(mouse.strength, mouse.target, 0.04, dt);
+  mouse.x = follow(mouse.x, mouse.tx, 0.025, dt);
+  mouse.y = follow(mouse.y, mouse.ty, 0.025, dt);
+  mouse.strength = follow(mouse.strength, mouse.target, 0.012, dt);
 }
 
 function onPointerMove(e) {
@@ -473,6 +462,8 @@ function draw(dt) {
   const { s, kx, ky, ks } = viewport();
   const cx = width / 2;
   const cy = height / 2;
+  const g = COUNT * ELEMENT_SIZE;
+  const [merge, soft, opacity, drift] = [current[g], current[g + 1], current[g + 2], current[g + 3]];
 
   // Maus in Rasterkoordinaten (für das Ausweichen ganzer Formen)
   const mx = VIEW_W / 2 + (mouse.tx - cx) / (kx * s);
@@ -489,10 +480,10 @@ function draw(dt) {
     const w = (2 * Math.PI) / (16 + i * 1.3);
     const dirX = i % 2 ? -1 : 1;
     const dirY = i % 3 ? 1 : -1;
-    x += 22 * dirX * (0.7 * Math.sin(w * time) + 0.3 * Math.sin(1.9 * w * time));
-    y += 16 * dirY * (0.7 * Math.sin(0.83 * w * time) + 0.3 * Math.sin(2.4 * w * time));
-    const rot = current[o + 4] + ((2.5 * Math.PI) / 180) * dirX * Math.sin(0.61 * w * time);
-    const breathe = 1 + 0.025 * Math.sin(0.71 * w * time);
+    x += 22 * drift * dirX * (0.7 * Math.sin(w * time) + 0.3 * Math.sin(1.9 * w * time));
+    y += 16 * drift * dirY * (0.7 * Math.sin(0.83 * w * time) + 0.3 * Math.sin(2.4 * w * time));
+    const rot = current[o + 4] + ((2.5 * Math.PI) / 180) * drift * dirX * Math.sin(0.61 * w * time);
+    const breathe = 1 + 0.025 * drift * Math.sin(0.71 * w * time);
 
     // Der Maus ausweichen
     let px = 0;
@@ -506,8 +497,8 @@ function draw(dt) {
       px = (dx / dist) * amount;
       py = (dy / dist) * amount;
     }
-    push[i].x = follow(push[i].x, px, 0.025, dt);
-    push[i].y = follow(push[i].y, py, 0.025, dt);
+    push[i].x = follow(push[i].x, px, 0.007, dt);
+    push[i].y = follow(push[i].y, py, 0.007, dt);
     x += push[i].x;
     y += push[i].y;
 
@@ -518,10 +509,8 @@ function draw(dt) {
     bufE.set([current[o + 13], current[o + 14], current[o + 15]], i * 3);
   }
 
-  const g = COUNT * ELEMENT_SIZE;
-  const [merge, soft, opacity] = [current[g], current[g + 1], current[g + 2]];
   for (let j = 0; j < AURA_COUNT; j++) {
-    const o = g + 3 + j * AURA_SIZE;
+    const o = g + 4 + j * AURA_SIZE;
     bufAura.set([cx + (current[o] - VIEW_W / 2) * kx * s, cy + (current[o + 1] - VIEW_H / 2) * ky * s, current[o + 2] * s, current[o + 3]], j * 4);
     bufAuraCol.set([current[o + 4], current[o + 5], current[o + 6]], j * 3);
   }
@@ -539,23 +528,14 @@ function draw(dt) {
   gl.uniform1f(u.Unit, s);
   gl.uniform1f(u.Time, time);
   // Wabern sanft einblenden
-  const ramp = Math.min(time / 6, 1);
-  gl.uniform1f(u.Wobble, reducedMotion ? 0 : props.wobble * s * ramp * ramp * (3 - 2 * ramp));
+  const ramp = Math.min(time / 10, 1);
+  gl.uniform1f(u.Wobble, reducedMotion ? 0 : props.wobble * drift * s * ramp * ramp * (3 - 2 * ramp));
   gl.uniform2f(u.Mouse, mouse.x, mouse.y);
   gl.uniform1f(u.Push, props.repel * 2.56 * s * mouse.strength);
   gl.uniform1f(u.PushRadius, 260 * s);
 
-  // Lage der orangenen Sektionen im Bild (höchstens zwei gleichzeitig sichtbar)
-  const bands = [-1, -1, -1, -1];
-  let n = 0;
-  for (const el of redSections) {
-    const r = el.getBoundingClientRect();
-    if (r.bottom <= 0 || r.top >= height || n > 2) continue;
-    bands[n] = r.top;
-    bands[n + 1] = r.bottom;
-    n += 2;
-  }
-  gl.uniform4fv(u.Red, bands);
+  const hero = document.querySelector(".hero-blobs");
+  gl.uniform1f(u.HeroCover, hero ? Math.max(heroOpacity, 0) : 0);
 
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 }
@@ -578,15 +558,16 @@ function draw(dt) {
 }
 
 body {
-  transition: background-color 0.8s ease;
+  transition: background-color 0.5s ease;
 }
 
 body.lumi-shapes-active {
   background-color: transparent;
 }
 
-/* Orange Sektionen zeichnet das Canvas (mit Animation). Ohne WebGL bleiben sie wie gehabt. */
-body.lumi-shapes-red [data-lumi-red] > :first-child {
-  background-color: transparent;
+/* Header läuft unten weich ins Beige aus (das Canvas zeigt dort keine Formen) */
+body.lumi-shapes-active .hero-blobs {
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 140px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 140px), transparent);
 }
 </style>

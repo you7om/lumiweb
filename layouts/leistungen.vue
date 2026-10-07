@@ -16,7 +16,7 @@
             <span
               class="text-xl font-bold tracking-tight text-(--primary-black) group-hover:text-(--primary-orange) transition-colors duration-300"
             >
-              <span class="text-(--primary-orange)">LUMI</span> WEB
+              <span class="text-(--primary-orange)">Lumi</span>Web
             </span>
           </a>
 
@@ -116,9 +116,9 @@
           <p
             class="max-w-2xl text-lg lg:text-xl text-(--primary-black) leading-relaxed"
           >
-            Ich entwickle Websites und individuelle Web-Apps für dein
-            Unternehmen, vom kompakten Onepager bis zur maßgeschneiderten
-            Lösung.
+            Ich entwickle Webseiten und individuelle Web-Apps für dein
+            Unternehmen, vom kompakten Onepager bis zur Web-App mit eigenen
+            Funktionen.
           </p>
         </div>
 

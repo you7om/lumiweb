@@ -35,7 +35,7 @@ const reasons = [
   {
     icon: "receipt_long",
     title: "Transparente Preise",
-    desc: "Bevor wir starten, weißt du, was deine Website kostet.",
+    desc: "Bevor wir starten, weißt du, was deine Webseite kostet.",
   },
   {
     icon: "code",
@@ -50,7 +50,7 @@ const reasons = [
   {
     icon: "apps",
     title: "Individuelle Web-Apps",
-    desc: "Du brauchst mehr als eine Website? Ich entwickle auch Anwendungen nach deinen Wünschen.",
+    desc: "Du brauchst mehr als eine Webseite? Ich entwickle auch Anwendungen nach deinen Wünschen.",
   },
 ];
 </script>

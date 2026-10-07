@@ -222,7 +222,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: "AGB – LUMI Web",
+  title: "AGB – LumiWeb",
   description: "Allgemeine Geschäftsbedingungen von LumiWeb – Julia Koval, Webentwicklung Dresden.",
   robots: "noindex, follow",
 });

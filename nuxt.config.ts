@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   site: {
     url: "https://lumiweb.de",
-    name: "LUMI Web",
+    name: "LumiWeb",
   },
 
   modules: ["@nuxtjs/sitemap"],
@@ -44,7 +44,7 @@ export default defineNuxtConfig({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "author", content: "Julia Koval" },
         { name: "google-site-verification", content: "zqwRlIUqtI7CEyp5Dz9fhxBl_YwD2ql6qTUV95XIZ_Q" },
-        { property: "og:site_name", content: "LUMI Web" },
+        { property: "og:site_name", content: "LumiWeb" },
         { property: "og:locale", content: "de_DE" },
         { name: "twitter:card", content: "summary_large_image" },
       ],

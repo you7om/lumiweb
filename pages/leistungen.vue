@@ -22,12 +22,12 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: "Leistungen & Preise – LUMI Web",
+  title: "Leistungen & Preise – LumiWeb",
   description:
-    "Onepager ab 450 €, mehrseitige Website ab 900 €, Web-App ab 1.900 €. Transparente Einstiegspreise für Webdesign & Webentwicklung in Dresden.",
-  ogTitle: "Leistungen & Preise – LUMI Web",
+    "Onepager ab 450 €, mehrseitige Webseite ab 900 €, Web-App ab 1.900 €. Transparente Einstiegspreise für Webdesign & Webentwicklung in Dresden.",
+  ogTitle: "Leistungen & Preise – LumiWeb",
   ogDescription:
-    "Transparente Einstiegspreise für Webdesign & Webentwicklung – Onepager, mehrseitige Websites und Web-Apps.",
+    "Transparente Einstiegspreise für Webdesign & Webentwicklung – Onepager, mehrseitige Webseiten und Web-Apps.",
   ogImage: "https://lumiweb.de/og-image.png",
   ogUrl: "https://lumiweb.de/leistungen",
   ogType: "website",

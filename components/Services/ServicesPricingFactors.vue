@@ -13,7 +13,7 @@
           <ul class="factorsList">
             <li>
               <span class="factorIcon material-symbols-outlined">expand</span>
-              <p>Umfang der Website (Anzahl der Seiten und Bereiche)</p>
+              <p>Umfang der Webseite (Anzahl der Seiten und Bereiche)</p>
             </li>
             <li>
               <span class="factorIcon material-symbols-outlined">description</span>

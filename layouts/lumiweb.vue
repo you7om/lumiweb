@@ -16,7 +16,7 @@
             <span
               class="text-xl font-bold tracking-tight text-(--primary-black) group-hover:text-(--primary-orange) transition-colors duration-300"
             >
-               <span class="text-(--primary-orange)">LUMI</span> WEB
+               <span class="text-(--primary-orange)">Lumi</span>Web
             </span>
           </a>
 

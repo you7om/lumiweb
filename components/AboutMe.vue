@@ -8,32 +8,32 @@
       <div class="flex items-center justify-center mx-auto md:mx-0 md:col-span-1">
         <img
           src="/img/about-photo.jpg"
+          alt="Julia Koval, Frontend-Entwicklerin aus Dresden"
           class="w-full max-w-xs md:max-w-none h-auto rounded-xl shadow-lg object-cover"
         />
       </div>
       <div class="flex flex-col gap-4 md:col-span-2">
         <h4>
-          Hallo, ich bin Julia – Junior Frontend - Entwicklerin aus Dresden mit
-          einem ungewöhnlichen Weg in die Tech-Welt.
+          Hallo, ich bin Julia, Frontend-Entwicklerin aus Dresden. Zur
+          Webentwicklung bin ich über die Psychologie gekommen.
         </h4>
         <p>
-          Ursprünglich komme ich aus der Psychologie. Nach meinem
-          Bachelor-Abschluss habe ich gemerkt, dass mich etwas anderes wirklich
-          begeistert: das Bauen von Dingen, die Menschen das Leben leichter
-          machen. So begann mein Weg in die Frontend-Entwicklung – und ich habe
-          es keine Sekunde bereut.
+          Nach meinem Bachelor in Psychologie habe ich gemerkt, dass mich
+          etwas anderes begeistert: das Bauen von Dingen, die Menschen das
+          Leben leichter machen. So begann mein Weg in die
+          Frontend-Entwicklung, und ich habe es keine Sekunde bereut.
         </p>
         <p>
           Was mir aus meinem Studium geblieben ist, nutze ich jeden Tag:
           analytisches Denken, ein Gespür für Nutzerperspektiven und die
           Fähigkeit, komplexe Zusammenhänge strukturiert zu durchdenken. Das
-          hilft mir nicht nur beim Coden, sondern auch dabei, Interfaces zu
-          bauen, die sich wirklich intuitiv anfühlen.
+          hilft mir, Oberflächen zu bauen, die Besucher ohne Anleitung
+          verstehen.
         </p>
         <p>
           Meine Kenntnisse in Vue.js, Nuxt, Tailwind und JavaScript habe ich mir
-          durch echte Projekte und eigenständiges Lernen angeeignet. Dabei entwickle
-          ich mich mit jedem Projekt weiter und erweitere kontinuierlich meine Fähigkeiten.
+          durch echte Projekte und eigenständiges Lernen angeeignet. Erzähl mir
+          von deinem Projekt, ich melde mich mit einem ersten Vorschlag.
         </p>
       </div>
     </div>

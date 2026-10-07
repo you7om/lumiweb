@@ -12,7 +12,7 @@
             <span
               class="text-xl font-bold tracking-tight text-(--primary-black) group-hover:text-(--primary-orange) transition-colors duration-300"
             >
-               <span class="text-(--primary-orange)">LUMI</span> WEB
+               <span class="text-(--primary-orange)">Lumi</span>Web
             </span>
           </a>
 
@@ -88,7 +88,7 @@
     <section
       class="relative min-h-[80vh] flex items-center overflow-hidden"
     >
-      <HeroBlobs />
+      <HeroBlobs v-bind="heroMotion" />
 
       <div class="relative z-10 w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-28 pb-20">
         <!-- Headline oben zentriert -->
@@ -113,8 +113,8 @@
         <p
           class="lg:hidden text-lg text-center text-(--primary-black)/70 leading-relaxed max-w-md mx-auto mb-2"
         >
-          Moderne Webseiten und individuelle Web-Apps für kleine
-          Unternehmen und Selbstständige – aus Dresden, remote & vor Ort.
+          Webseiten und Web-Apps für kleine Unternehmen und Selbstständige.
+          Aus Dresden, remote und vor Ort.
         </p>
 
         <!-- Info-Blöcke: Technologien, Für wen, Leistungen, Standort -->
@@ -177,16 +177,23 @@
     <div>
       <slot />
     </div>
-
-    <TheFooter />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const scrolled = ref(false);
 const menuOpen = ref(false);
+
+// Auf der Startseite (und ihrer Testversion /lab) schwebt der Header langsamer und sanfter,
+// passend zu den Lumi-Formen darunter
+const route = useRoute();
+const heroMotion = computed(() =>
+  ["/", "/lab"].includes(route.path)
+    ? { speed: 0.3, wobble: 10, repel: 28, mouseEase: 0.32, intensity: 0.74 }
+    : {},
+);
 
 const navItems = [
   { label: "Über mich", href: "#about" },

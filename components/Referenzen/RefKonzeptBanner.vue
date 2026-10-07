@@ -5,7 +5,7 @@
         <span class="badge">Designkonzept</span>
         <h3>Dieser Stil gefällt dir?</h3>
         <p class="subtext">
-          Der Entwurf ist noch frei. Melde dich – ich setze ihn individuell für dich um.
+          Der Entwurf ist noch frei. Melde dich, und ich setze ihn für dich um.
         </p>
         <a href="#kontakt" class="btn">
           Kontaktiere mich

@@ -14,10 +14,10 @@ import TheFooter from "~/components/UI/TheFooter.vue";
 definePageMeta({ layout: "referenzen" });
 
 useSeoMeta({
-  title: "Projekte – LUMI Web",
+  title: "Projekte – LumiWeb",
   description:
     "Alle Web-Projekte von LumiWeb – Webentwicklung & Webdesign in Dresden. Individuelle Webseiten für Unternehmen und Selbstständige.",
-  ogTitle: "Projekte – LUMI Web",
+  ogTitle: "Projekte – LumiWeb",
   ogDescription:
     "Alle Web-Projekte von LumiWeb – Webentwicklung & Webdesign in Dresden.",
   ogImage: "https://lumiweb.de/og-image.png",

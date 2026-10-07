@@ -29,22 +29,24 @@
         <!-- Name + Email nebeneinander -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div class="flex flex-col gap-2">
-            <label class="label">Name*</label>
+            <label for="name" class="label">Name*</label>
             <input
               id="name"
               v-model="name"
               type="text"
+              autocomplete="name"
               placeholder="Dein Name"
               class="input-field"
               required
             />
           </div>
           <div class="flex flex-col gap-2">
-            <label class="label">E-Mail*</label>
+            <label for="email" class="label">E-Mail*</label>
             <input
               id="email"
               v-model="email"
               type="email"
+              autocomplete="email"
               placeholder="deine@email.de"
               class="input-field"
               required
@@ -54,7 +56,7 @@
 
         <!-- Betreff -->
         <div class="flex flex-col gap-2">
-          <label class="label">Betreff*</label>
+          <label for="subject" class="label">Betreff*</label>
           <input
             id="subject"
             v-model="subject"
@@ -67,7 +69,7 @@
 
         <!-- Nachricht -->
         <div class="flex flex-col gap-2">
-          <label class="label">Nachricht*</label>
+          <label for="message" class="label">Nachricht*</label>
           <textarea
             id="message"
             v-model="message"

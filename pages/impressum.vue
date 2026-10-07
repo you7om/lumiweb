@@ -134,7 +134,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: "Impressum – LUMI Web",
+  title: "Impressum – LumiWeb",
   description: "Impressum von LumiWeb – Julia Koval, Webentwicklung Dresden.",
   robots: "noindex, follow",
 });

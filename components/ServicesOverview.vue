@@ -7,7 +7,7 @@
         <div class="serviceCard">
           <h3>Onepager</h3>
           <p>
-            Kompakte Website für Selbstständige und kleine Unternehmen.
+            Kompakte Webseite für Selbstständige und kleine Unternehmen.
           </p>
           <ul>
             <li>
@@ -16,7 +16,7 @@
             </li>
             <li>
               <span class="material-symbols-outlined">check_small</span>
-              Modernes Design
+              Design passend zu deinen Farben und deinem Logo
             </li>
             <li>
               <span class="material-symbols-outlined">check_small</span>
@@ -31,14 +31,14 @@
         </div>
 
         <div class="serviceCard">
-          <h3>Mehrseitige Website</h3>
+          <h3>Mehrseitige Webseite</h3>
           <p>
             Mehr Raum für Leistungen, Angebote und dein Unternehmen.
           </p>
           <ul>
             <li>
               <span class="material-symbols-outlined">check_small</span>
-              Bis zu 10 Seiten
+              Bis zu 5 Seiten
             </li>
             <li>
               <span class="material-symbols-outlined">check_small</span>

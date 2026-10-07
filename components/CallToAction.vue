@@ -3,8 +3,7 @@
     <div class="w-full 2xl:w-3/4 mx-auto px-4 2xl:px-0 ">
       <!-- Überschrift -->
       <div class="text-center mb-10">
-        <span class="feature-badge">Warum mit mir?</span>
-        <h3>Ich kümmere mich um alles</h3>
+        <h2>Warum mit mir?</h2>
       </div>
 
       <!-- Grid -->
@@ -14,9 +13,9 @@
       >
         <div class="feature-card">
           <span class="material-symbols-outlined feature-icon">palette</span>
-          <p class="feature-title">Ein Design, das wirklich zu dir passt</p>
+          <p class="feature-title">Ein Design, das zu dir passt</p>
           <p class="feature-text">
-            Deine Website sieht aus wie du – nicht wie tausend andere.
+            Farben, Schrift und Aufbau richten sich nach deiner Marke.
           </p>
         </div>
 
@@ -24,9 +23,10 @@
           <span class="material-symbols-outlined feature-icon">edit</span>
           <p class="feature-title">Inhalte jederzeit selbst bearbeiten</p>
           <p class="feature-text">
-            Einfaches CMS – du änderst Texte & Bilder ohne
-            Programmier Kenntnisse.
+            Mit einem einfachen CMS änderst du Texte und Bilder ohne
+            Programmierkenntnisse.
           </p>
+          <span class="feature-optional">Optional buchbar</span>
         </div>
 
         <div class="feature-card">
@@ -43,15 +43,17 @@
           >
           <p class="feature-title">Online-Buchung & Terminanfrage</p>
           <p class="feature-text">
-            Deine Kunden buchen direkt auf der Website – zu jeder Zeit.
+            Deine Kunden buchen rund um die Uhr direkt auf der Webseite.
           </p>
+          <span class="feature-optional">Optional buchbar</span>
         </div>
 
         <div class="feature-card">
           <span class="material-symbols-outlined feature-icon">search</span>
           <p class="feature-title">Schnelle Ladezeiten & bessere Sichtbarkeit bei Google</p>
           <p class="feature-text">
-            Gefunden werden auf Google mit schnellen Ladezeiten.
+            Ich optimiere Bilder und Code, damit deine Seite schnell lädt.
+            Google bewertet das positiv.
           </p>
         </div>
 
@@ -59,7 +61,7 @@
           <span class="material-symbols-outlined feature-icon">star</span>
           <p class="feature-title">Umgesetzt nach deinen Wünschen</p>
           <p class="feature-text">
-            Dein Feedback zählt – bis das Ergebnis stimmt. Ich gestalte alles nach deinen Wünschen, bis du zufrieden bist.
+            Du siehst Zwischenstände und gibst Feedback, bis das Ergebnis stimmt.
           </p>
         </div>
       </div>
@@ -71,14 +73,6 @@
 
 <style scoped>
 @reference "tailwindcss";
-
-h3 {
-  @apply text-4xl font-bold text-(--primary-beige) tracking-tight mt-3;
-}
-
-.feature-badge {
-  @apply text-xs tracking-[0.2em] text-(--primary-beige) font-semibold;
-}
 
 .feature-card {
   @apply flex flex-col gap-3 p-4 2xl:p-12 bg-(--primary-orange) hover:bg-(--primary-beige)/5 transition-colors duration-300;
@@ -94,5 +88,10 @@ h3 {
 
 .feature-text {
   @apply text-(--primary-beige) text-base lg:text-lg lg:leading-relaxed;
+}
+
+.feature-optional {
+  @apply self-start text-xs uppercase tracking-[0.15em] font-semibold text-(--primary-beige)
+  border border-(--primary-beige)/40 rounded-full px-3 py-1;
 }
 </style>

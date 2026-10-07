@@ -16,7 +16,7 @@
             <span
               class="text-xl font-bold tracking-tight text-(--primary-black) group-hover:text-(--primary-orange) transition-colors duration-300"
             >
-              <span class="text-(--primary-orange)">LUMI</span> WEB
+              <span class="text-(--primary-orange)">Lumi</span>Web
             </span>
           </a>
 
@@ -117,7 +117,7 @@
 
         <!-- Buttons unten zentriert -->
         <div class="flex flex-col sm:flex-row justify-center gap-3 mt-5">
-          <a href="/#leistungen" class="btn-orange"> Leistungen ansehen </a>
+          <a href="/leistungen" class="btn-orange"> Leistungen ansehen </a>
           <a href="/#kontakt" class="btn"> Kontakt aufnehmen </a>
         </div>
       </div>
@@ -126,8 +126,6 @@
     <div>
       <slot />
     </div>
-
-    <TheFooter />
   </div>
 </template>
 

@@ -10,11 +10,9 @@
             <h3>ONEPAGER</h3>
             <div class="serviceIntro">
               <p>
-                Ein kompakter Webauftritt für dein Unternehmen – alle wichtigen
-                Informationen übersichtlich auf einer einzigen Seite vereint.
-                Alles, was deine Besucher wissen müssen, findest du dort klar
-                strukturiert und durchdacht aufgebaut, für einen überzeugenden
-                ersten Eindruck.
+                Ein kompakter Webauftritt auf einer Seite. Deine Besucher finden
+                dort alles Wichtige über dich, ohne sich durch Unterseiten zu
+                klicken.
               </p>
             </div>
 
@@ -40,9 +38,9 @@
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
-                      3 frei wählbare Blöcke zusätzlich zu Header &amp; Footer
+                      3 frei wählbare Inhaltsblöcke zusätzlich zu Header &amp; Footer
                       (z. B. Über mich, Meine Leistungen, Meine Werte, Kontakt,
-                      Photogalerie)
+                      Fotogalerie)
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
@@ -74,7 +72,7 @@
                 <p class="priceCard-text">
                   Ich entwickle ein individuelles Design, das zu deinem
                   Unternehmen, deiner Zielgruppe und deinen Vorstellungen passt,
-                  und übernehme die komplette Umsetzung deiner Website.
+                  und übernehme die komplette Umsetzung deiner Webseite.
                 </p>
 
                 <div class="priceCard-block">
@@ -92,7 +90,7 @@
                       <span class="material-symbols-outlined">check_small</span>
                       5 frei wählbare Inhaltsblöcke zusätzlich zu Header &amp;
                       Footer (z. B. Über mich, Meine Leistungen, Meine Werte,
-                      Kontakt, Photogalerie)
+                      Kontakt, Fotogalerie)
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
@@ -136,7 +134,7 @@
                 Mehr Seiten, mehr Raum für dein Angebot, deine Leistungen und
                 dein Unternehmen. Strukturiert und übersichtlich aufgebaut,
                 damit dein Auftritt online genauso überzeugend wirkt wie vor
-                Ort – klar gegliedert und einfach zu navigieren.
+                Ort, klar gegliedert und einfach zu navigieren.
               </p>
             </div>
 
@@ -162,8 +160,7 @@
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
-                      Übersichtliche Navigation für eine optimale
-                      Nutzererfahrung
+                      Übersichtliche Navigation
                     </li>
                     <li>
                       <span class="material-symbols-outlined">check_small</span>
@@ -195,7 +192,7 @@
                 <p class="priceCard-text">
                   Ich entwickle ein individuelles Design, das zu deinem
                   Unternehmen und deinen Vorstellungen passt, und übernehme die
-                  komplette Umsetzung deiner Website.
+                  komplette Umsetzung deiner Webseite.
                 </p>
 
                 <div class="priceCard-block">
@@ -252,16 +249,11 @@
             <h3>WEB-APP-ENTWICKLUNG</h3>
             <div class="serviceIntro">
               <p>
-                Du hast eine Idee für eine App oder brauchst eine individuelle
-                digitale Lösung für dein Business? Ich entwickle eine moderne
-                Web-App, die deine Abläufe vereinfacht, Prozesse automatisiert
-                und deinen Kunden das Leben spürbar leichter macht.
+                Ich entwickle Web-Apps für Abläufe, die du heute noch per Hand
+                oder in Excel erledigst, zum Beispiel Buchungen oder
+                Kundenverwaltung.
               </p>
               <ul>
-                <li>
-                  <span class="material-symbols-outlined">check_small</span>
-                  Moderne Web-Apps
-                </li>
                 <li>
                   <span class="material-symbols-outlined">check_small</span>
                   Intuitives, nutzerfreundliches Design
@@ -276,7 +268,7 @@
                 </li>
                 <li>
                   <span class="material-symbols-outlined">check_small</span>
-                  Moderne Technologien wie Vue.js & Nuxt
+                  Umgesetzt mit Vue.js & Nuxt
                 </li>
                 <li>
                   <span class="material-symbols-outlined">check_small</span>
@@ -285,7 +277,7 @@
               </ul>
             </div>
 
-            <p class="price mt-8">ab 1900 €</p>
+            <p class="price mt-8">ab 1.900 €</p>
 
             <button class="btn-black mt-6" @click="navigateTo('/#kontakt')">
               Anfragen
@@ -340,7 +332,7 @@ const extraCosts = [
   {
     icon: "public",
     title: "Domain & Hosting",
-    desc: "Je nach Anbieter. Damit wird deine Domain registriert und deine Website online gespeichert.",
+    desc: "Je nach Anbieter. Damit wird deine Domain registriert und deine Webseite online gespeichert.",
     price: "ca. 5–10 € / Monat",
   },
   {
@@ -352,7 +344,7 @@ const extraCosts = [
   {
     icon: "lock",
     title: "SSL-Zertifikat",
-    desc: "Verschlüsselte Verbindung für deine Website.",
+    desc: "Verschlüsselte Verbindung für deine Webseite.",
     price: "meist inklusive",
   },
   {
@@ -379,18 +371,18 @@ const extras = [
   {
     icon: "translate",
     title: "Weitere Sprache",
-    desc: "Deine Website in mehreren Sprachen umsetzen.",
+    desc: "Deine Webseite in mehreren Sprachen umsetzen.",
     price: "ab 100 €",
   },
   {
     icon: "build",
     title: "Wartung & Pflege",
-    desc: "Technische Updates, Änderungen und laufende Betreuung deiner Website.",
+    desc: "Technische Updates, Änderungen und laufende Betreuung deiner Webseite.",
     price: "ab 20 € / Monat",
   },
   {
     icon: "edit",
-    title: "Website selbst bearbeiten (CMS)",
+    title: "Webseite selbst bearbeiten (CMS)",
     desc: "Inhalte jederzeit selbst bearbeiten, ganz ohne Programmierkenntnisse.",
     price: "ab 50 €",
   },
@@ -409,7 +401,7 @@ const extras = [
   {
     icon: "calendar_month",
     title: "Buchungssystem",
-    desc: "Deine Kunden buchen direkt auf der Website.",
+    desc: "Deine Kunden buchen direkt auf der Webseite.",
     price: "ab 250 €",
   },
   {
@@ -421,7 +413,7 @@ const extras = [
   {
     icon: "search",
     title: "SEO-Grundeinrichtung",
-    desc: "Seitentitel und Beschreibungen für Google einrichten und deine Website bei Google zur Aufnahme anmelden.",
+    desc: "Seitentitel und Beschreibungen für Google einrichten und deine Webseite bei Google zur Aufnahme anmelden.",
     price: "ab 50 €",
   },
 ];

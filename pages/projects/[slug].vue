@@ -30,15 +30,15 @@ const route = useRoute();
 const project = referenzen.find((p) => p.slug === route.params.slug);
 
 useSeoMeta({
-  title: () => `${project?.title} – Portfolio | LUMI Web`,
+  title: () => `${project?.title} – Portfolio | LumiWeb`,
   description: () => project?.description,
-  ogTitle: () => `${project?.title} – Portfolio | LUMI Web`,
+  ogTitle: () => `${project?.title} – Portfolio | LumiWeb`,
   ogDescription: () => project?.description,
   ogImage: () =>
     project?.img ? `https://lumiweb.de${project.img}` : "https://lumiweb.de/og-image.png",
   ogUrl: () => `https://lumiweb.de/projects/${project?.slug}`,
   ogType: "website",
-  twitterTitle: () => `${project?.title} – Portfolio | LUMI Web`,
+  twitterTitle: () => `${project?.title} – Portfolio | LumiWeb`,
   twitterDescription: () => project?.description,
   twitterImage: () =>
     project?.img ? `https://lumiweb.de${project.img}` : "https://lumiweb.de/og-image.png",

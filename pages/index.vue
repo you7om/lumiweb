@@ -1,35 +1,23 @@
 <template>
-  <div>
-    <CallToAction />
-    <ServicesOverview />
-    <AllProjects />
-    <AboutMe />
-    <Kontakt />
-    <TheFooter />
-  </div>
+  <LumiHome />
 </template>
 
 <script setup>
-import TheFooter from "~/components/UI/TheFooter.vue";
-import ServicesOverview from "~/components/ServicesOverview.vue";
-import AboutMe from "~/components/AboutMe.vue";
-import CallToAction from "~/components/CallToAction.vue";
-import AllProjects from "~/components/Referenzen/AllProjects.vue";
-import Kontakt from "~/components/Kontakt.vue";
+import LumiHome from "~/components/LumiHome.vue";
 
 useSeoMeta({
-  title: "LUMI Web – Webentwicklung & Webdesign in Dresden",
+  title: "LumiWeb – Webentwicklung & Webdesign in Dresden",
   description:
-    "Moderne Webseiten für Unternehmen und Selbstständige. LumiWeb – professionelles Webdesign & Webentwicklung. Jetzt anfragen.",
-  ogTitle: "LUMI Web – Webentwicklung & Webdesign in Dresden",
+    "Webseiten für kleine Unternehmen und Selbstständige aus Dresden. Onepager ab 450 €, mehrseitig ab 900 €. Jetzt anfragen.",
+  ogTitle: "LumiWeb – Webentwicklung & Webdesign in Dresden",
   ogDescription:
-    "Moderne Webseiten für Unternehmen und Selbstständige. LumiWeb – professionelles Webdesign & Webentwicklung.",
+    "Webseiten für kleine Unternehmen und Selbstständige aus Dresden. Onepager ab 450 €, mehrseitig ab 900 €. Jetzt anfragen.",
   ogImage: "https://lumiweb.de/og-image.png",
   ogUrl: "https://lumiweb.de",
   ogType: "website",
-  twitterTitle: "LUMI Web – Webentwicklung & Webdesign in Dresden",
+  twitterTitle: "LumiWeb – Webentwicklung & Webdesign in Dresden",
   twitterDescription:
-    "Moderne Webseiten für Unternehmen und Selbstständige. LumiWeb – professionelles Webdesign & Webentwicklung.",
+    "Webseiten für kleine Unternehmen und Selbstständige aus Dresden. Onepager ab 450 €, mehrseitig ab 900 €. Jetzt anfragen.",
   twitterImage: "https://lumiweb.de/og-image.png",
 });
 
@@ -72,7 +60,7 @@ useHead({
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "WordPress-Websites",
+                name: "WordPress-Webseiten",
               },
             },
             {

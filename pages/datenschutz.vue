@@ -519,7 +519,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: "Datenschutzerklärung – LUMI Web",
+  title: "Datenschutzerklärung – LumiWeb",
   description: "Datenschutzerklärung von LumiWeb – Julia Koval, Webentwicklung Dresden.",
   robots: "noindex, follow",
 });

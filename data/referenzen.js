@@ -31,9 +31,9 @@ export const referenzen = [
   },
   {
     slug: "parking-frankfurt-website",
-    title: "Frankfurt Parking Webseite",
+    title: "Frankfurt Airport Parking: Webseite",
     badge: "In Entwicklung",
-    description: "Informations- und Marketing-Website für Parkservices am Frankfurter Flughafen.",
+    description: "Informations- und Marketing-Webseite für Parkservices am Frankfurter Flughafen.",
     img: "/parking-webseite-header.png",
     imgDescriptionMobile: "/parking-webseite-header-mobile.png",
     industry: "Mobilität & Parkraum",
@@ -42,7 +42,7 @@ export const referenzen = [
     year: "2026",
     url: "",
     texts: [
-      "Ergänzend zum Buchungsportal habe ich eine eigenständige Informations- und Marketing-Website für Parkservices am Frankfurter Flughafen entwickelt. Sie erklärt Valet Parking und Shuttle Service, das Sicherheitsversprechen und buchbare Zusatzleistungen – und führt Besucher direkt in die Buchung.",
+      "Ergänzend zum Buchungsportal habe ich eine eigenständige Informations- und Marketing-Webseite für Parkservices am Frankfurter Flughafen entwickelt. Sie erklärt Valet Parking und Shuttle Service, das Sicherheitsversprechen und buchbare Zusatzleistungen. Von jeder Seite aus gelangen Besucher direkt in die Buchung.",
       "Das Projekt befindet sich aktuell noch in der Entwicklung.",
     ],
     features: [
@@ -65,8 +65,8 @@ export const referenzen = [
     description: "Webseite für Kräuterführungen in Dresden.",
     img: "/kraut-voll-header.png", // Bild in public speichern
     texts: [
-      "Die Website präsentiert saisonale Spaziergänge, bei denen Teilnehmer essbare Wildpflanzen kennenlernen und nachhaltig sammeln können.",
-      "Das Design orientiert sich an den Farben der Natur — grüne Töne und viel Weißraum sorgen für eine ruhige, einladende Atmosphäre.",
+      "Die Webseite präsentiert saisonale Spaziergänge, bei denen Teilnehmer essbare Wildpflanzen kennenlernen und nachhaltig sammeln können.",
+      "Das Design orientiert sich an den Farben der Natur: Grüne Töne und viel Weißraum sorgen für eine ruhige, einladende Atmosphäre.",
     ],
     industry: "Kräuterführungen & Events",
     location: "Dresden",
@@ -82,7 +82,7 @@ export const referenzen = [
       {
         text: "Für mobile Geräte optimiert",
         icon: "smartphone",
-        desc: "Perfekte Darstellung auf jedem Gerät",
+        desc: "Termine und Infos zu den Führungen auch unterwegs gut lesbar",
       },
       {
         text: "Harmonisches Farbkonzept",
@@ -113,7 +113,7 @@ export const referenzen = [
   },
   {
     slug: "parkingsoft",
-    title: "Frankfurt Airport Parking",
+    title: "Frankfurt Airport Parking: Buchungsportal",
     badge: "In Entwicklung",
     description: "Buchungsportal für Parkplatz-Reservierungen am Frankfurter Flughafen",
     img: "/parking-header.png",
@@ -123,13 +123,13 @@ export const referenzen = [
     year: "2025 - heute",
     url: "",
     texts: [
-      "Buchungsportal für einen privaten Parkplatz-Anbieter am Frankfurter Flughafen – Kunden wählen Zeitraum, reservieren ihren Stellplatz und bezahlen in wenigen Schritten.",
+      "Buchungsportal für einen privaten Parkplatz-Anbieter am Frankfurter Flughafen. Kunden wählen den Zeitraum, reservieren ihren Stellplatz und bezahlen in wenigen Schritten.",
       "Das Projekt befindet sich aktuell noch in der Entwicklung.",
     ],
     features: [
       { text: "Login & Nutzerverwaltung", icon: "manage_accounts", desc: "Sicherer Zugang zum persönlichen Konto" },
       { text: "Parkplatz-Buchungssystem", icon: "local_parking", desc: "Einfache Reservierung in wenigen Schritten" },
-      { text: "Responsive Design", icon: "smartphone", desc: "Perfekte Darstellung auf jedem Gerät" },
+      { text: "Responsive Design", icon: "smartphone", desc: "Buchen auch am Smartphone auf dem Weg zum Flughafen" },
       { text: "Übersichtlicher Buchungsablauf", icon: "fact_check", desc: "Klare Schritte von Auswahl bis Bestätigung" },
       { text: "Echtzeit-Verfügbarkeit", icon: "schedule", desc: "Immer aktuelle Parkplatz-Verfügbarkeit" },
       { text: "Zahlungsintegration", icon: "credit_card", desc: "Sichere Bezahlung direkt im Portal" },
@@ -142,7 +142,7 @@ export const referenzen = [
     slug: "securetime",
     title: "SecureTime",
     badge: "Webseite",
-    description: "Marketing-Website für eine Dienstplanungs-Software für Sicherheitsdienstleister.",
+    description: "Marketing-Webseite für eine Dienstplanungs-Software für Sicherheitsdienstleister.",
     img: "/securetime-header.png",
     industry: "Sicherheitsdienstleistungen",
     location: "Deutschland",
@@ -150,8 +150,8 @@ export const referenzen = [
     year: "2026",
     url: "https://securetime.de/",
     texts: [
-      "Für SecureTime – eine Software für Dienstplanung und Zeiterfassung in Sicherheitsunternehmen – habe ich die Marketing-Website konzipiert und umgesetzt.",
-      "Ziel war es, das Produkt überzeugend zu präsentieren und potenzielle Firmenkunden zur Demo-Anfrage zu bewegen – klar strukturiert, professionell und auf die Zielgruppe zugeschnitten.",
+      "Für SecureTime, eine Software für Dienstplanung und Zeiterfassung in Sicherheitsunternehmen, habe ich die Marketing-Webseite konzipiert und umgesetzt.",
+      "Ziel war es, potenzielle Firmenkunden zur Demo-Anfrage zu bewegen. Dafür bekommt jede Funktion einen eigenen Abschnitt mit echten Screenshots aus der App.",
     ],
     features: [
       {
@@ -162,7 +162,7 @@ export const referenzen = [
       {
         text: "Für mobile Geräte optimiert",
         icon: "smartphone",
-        desc: "Perfekte Darstellung auf jedem Gerät",
+        desc: "Produktinfos auch auf Tablet und Smartphone gut lesbar",
       },
       {
         text: "Feature-Seiten mit Screenshots",
@@ -212,7 +212,7 @@ export const referenzen = [
       { text: "Modernes Branding", icon: "brush", desc: "Klares Logo und einheitliche Gestaltungssprache" },
       { text: "Klare Navigation", icon: "menu", desc: "Übersichtliche Struktur für eine intuitive Bedienung" },
       { text: "Konzept & Atmosphäre", icon: "storefront", desc: "Kurze Vorstellung des Cafés und seiner Idee" },
-      { text: "Für mobile Geräte optimiert", icon: "smartphone", desc: "Perfekte Darstellung auf jedem Gerät" },
+      { text: "Für mobile Geräte optimiert", icon: "smartphone", desc: "Speisekarte und Infos auch am Smartphone gut lesbar" },
     ],
     cardImg: "/sunday-card.png",
     imgDescriptionMobile: "/sunday-header-mobile.png",
@@ -232,8 +232,8 @@ export const referenzen = [
     year: "2025",
     url: "https://derbunteladen-dresden.de",
     texts: [
-      "Für Der Bunte Laden – einen Secondhand-Shop seit über 20 Jahren mitten in Dresden-Pieschen – habe ich eine moderne Webseite gestaltet und umgesetzt.",
-      "Die Seite präsentiert das Sortiment übersichtlich, erklärt den An- und Verkauf-Prozess und stellt das Team vor – warm, einladend und auf die Nachbarschaft zugeschnitten.",
+      "Für Der Bunte Laden, einen Secondhand-Shop seit über 20 Jahren mitten in Dresden-Pieschen, habe ich eine moderne Webseite gestaltet und umgesetzt.",
+      "Die Seite präsentiert das Sortiment übersichtlich, erklärt den An- und Verkauf-Prozess und stellt das Team vor. Die Gestaltung ist warm und spricht die Nachbarschaft an.",
     ],
     features: [
       {
@@ -259,7 +259,7 @@ export const referenzen = [
       {
         text: "Für mobile Geräte optimiert",
         icon: "smartphone",
-        desc: "Perfekte Darstellung auf jedem Gerät",
+        desc: "Öffnungszeiten und Sortiment auch unterwegs schnell gefunden",
       },
       {
         text: "Warmes, einladendes Design",
@@ -286,15 +286,15 @@ export const referenzen = [
     year: "2026",
     url: "",
     texts: [
-      "Moku ist ein fiktives Café-Konzept, das im Rahmen eines Webdesign-Projekts entstanden ist. Die Website zeigt, wie ein modernes Specialty-Coffee-Café aufgebaut sein kann – mit klarer Struktur, ruhiger Gestaltung und Fokus auf das Wesentliche: Getränke und ruhige Atmosphäre.",
-      "Das Konzept zeigt außerdem, wie ein Café seine Inhalte selbst aktuell halten kann. Saisonale Getränke, aktuelle Angebote und die Karte lassen sich einfach anpassen. Das Design ist minimalistisch gehalten und sorgt für eine klare, ruhige Darstellung der Inhalte.",
+      "Moku ist ein fiktives Café-Konzept, das im Rahmen eines Webdesign-Projekts entstanden ist. Die Webseite zeigt, wie ein modernes Specialty-Coffee-Café aufgebaut sein kann: mit klarer Struktur, reduzierter Gestaltung und Fokus auf Getränke und Atmosphäre.",
+      "Das Konzept zeigt außerdem, wie ein Café seine Inhalte selbst aktuell halten kann. Saisonale Getränke, aktuelle Angebote und die Karte lassen sich einfach anpassen. Das Design ist minimalistisch gehalten und stellt die Inhalte klar dar.",
     ],
     features: [
       { text: "Saisonale Getränkekarte", icon: "menu_book", desc: "Struktur für flexibel anpassbare Inhalte und wechselnde Angebote" },
       { text: "Visuelle Getränkepräsentation", icon: "coffee", desc: "Klar aufgebaute Präsentation der Getränke mit Fokus auf Lesbarkeit und Übersicht" },
       { text: "Aktuelles & News-Bereich", icon: "eco", desc: "Eigener Bereich für aktuelle Infos, Ankündigungen und saisonale Neuheiten" },
       { text: "Öffnungszeiten & Kontakt", icon: "schedule", desc: "Alle Infos auf einen Blick" },
-      { text: "Für mobile Geräte optimiert", icon: "smartphone", desc: "Optimale Darstellung auf jedem Gerät" },
+      { text: "Für mobile Geräte optimiert", icon: "smartphone", desc: "Getränkekarte und Öffnungszeiten auch am Smartphone gut lesbar" },
       { text: "Modernes, ruhiges Design", icon: "palette", desc: "Ruhiges Navy-Farbkonzept mit viel Weißraum und klarer Typografie" },
     ],
     cardImg: "/moku-card.png",
@@ -315,12 +315,12 @@ export const referenzen = [
     year: "2025",
     url: "",
     texts: [
-      "Die Webseite präsentiert das Leistungsangebot des Sicherheitsunternehmens klar und professionell – von Objektschutz bis hin zu Veranstaltungssicherheit.",
-      "Ein modernes, seriöses Design in dunklen Tönen vermittelt Vertrauen und Kompetenz – genau das, was Kunden von einem Sicherheitsdienstleister erwarten.",
+      "Die Webseite präsentiert das Leistungsangebot des Sicherheitsunternehmens klar und professionell, von Objektschutz bis Veranstaltungssicherheit.",
+      "Dunkle Farben und eine klare Struktur wirken seriös.",
     ],
     features: [
       { text: "Leistungsübersicht", icon: "security", desc: "Alle Dienstleistungen auf einen Blick" },
-      { text: "Responsive Design", icon: "smartphone", desc: "Perfekte Darstellung auf jedem Gerät" },
+      { text: "Responsive Design", icon: "smartphone", desc: "Leistungen und Kontakt auch am Smartphone schnell erreichbar" },
       { text: "Kontaktformular", icon: "mail", desc: "Schnelle Kontaktaufnahme für Anfragen" },
       { text: "Über-Uns-Seite", icon: "groups", desc: "Vorstellung des Teams und der Unternehmensgeschichte" },
       { text: "Referenzen-Sektion", icon: "verified", desc: "Bisherige Projekte und Kundenstimmen" },
