@@ -86,11 +86,11 @@
 
     <!-- Hero Section -->
     <section
-      class="relative min-h-[80vh] flex items-center overflow-hidden"
+      class="hero-section relative min-h-[80vh] flex items-center overflow-hidden"
     >
       <HeroBlobs v-bind="heroMotion" />
 
-      <div class="relative z-10 w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-28 pb-20">
+      <div class="hero-content relative z-10 w-full max-w-3/4 mx-auto px-5 lg:px-0 pt-28 pb-20">
         <!-- Headline oben zentriert -->
         <div class="text-center mb-5 lg:mb-12 flex flex-col items-center gap-4">
           <span

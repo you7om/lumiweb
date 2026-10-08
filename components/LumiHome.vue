@@ -37,29 +37,79 @@ const REVEAL = [
   ".home-contact h3", ".home-contact .email-box",
   ".home-contact .divider-or", ".home-contact .form-hint", ".home-contact form > *",
 ].join(", ");
-// Versatz zwischen Geschwistern, die gleichzeitig erscheinen (z. B. Karten in einer Reihe)
-const STAGGER_MS = 160;
+// Abstand zwischen zwei Elementen, die nacheinander erscheinen
+const STAGGER_MS = 150;
+// Diese Karten erscheinen reihenweise (eine Reihe, dann die nächste), innerhalb der Reihe
+// in zufälliger Reihenfolge bis zu ROW_SHUFFLE_MS versetzt. Alle anderen Elemente erscheinen
+// einzeln nacheinander. Auf dem Handy ist jede Reihe nur eine Karte, dort also auch nacheinander.
+const ROW_TOGETHER = ".home-projects .project-card";
+const ROW_SHUFFLE_MS = 260;
 
 const pageEl = ref(null);
 let revealObserver = null;
+// Zeitpunkt, ab dem das nächste Element bzw. die nächste Reihe erscheinen darf (Warteschlange)
+let nextSlot = 0;
+// Zuletzt eingereihtes Element: Container, Höhe und Startzeit seiner Reihe
+let lastRow = null;
+
+// ===== Seite erst zeigen, wenn Header und Formen bereit sind =====
+// Bis dahin bleibt die Seite beige (CSS unten). Ohne WebGL oder bei langsamem Laden
+// wird nach spätestens HERO_WAIT_MS trotzdem eingeblendet.
+const HERO_WAIT_MS = 1500;
+let readyTimer = null;
+
+function showPage() {
+  clearTimeout(readyTimer);
+  document.removeEventListener("hero-blobs-ready", showPage);
+  // Zwei Frames warten, damit das Canvas sein erstes Bild sicher gezeichnet hat
+  requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add("home-ready")));
+}
 
 onMounted(() => {
+  if (document.querySelector(".hero-blobs[data-ready]")) showPage();
+  else {
+    document.addEventListener("hero-blobs-ready", showPage);
+    readyTimer = setTimeout(showPage, HERO_WAIT_MS);
+  }
+
   // Bei reduced motion bleibt alles sofort sichtbar
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   const targets = [...pageEl.value.querySelectorAll(REVEAL)];
-  targets.forEach((el) => {
-    const siblings = [...el.parentElement.children].filter((c) => targets.includes(c));
-    el.style.transitionDelay = `${(siblings.indexOf(el) % 4) * STAGGER_MS}ms`;
-    el.classList.add("home-reveal");
-  });
+  targets.forEach((el) => el.classList.add("home-reveal"));
+  // Noch nicht eingeblendete Elemente
+  let pending = [...targets];
 
   revealObserver = new IntersectionObserver(
     (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        const el = entry.target;
+      // Was gleichzeitig ins Bild kommt, erscheint in der Reihenfolge der Seite, eins nach dem anderen.
+      // Kommt später etwas dazu, reiht es sich hinten an, statt gleichzeitig loszulaufen.
+      const hits = entries.filter((entry) => entry.isIntersecting).map((entry) => entry.target);
+      // Bei reihenweisen Karten die ganze Reihe mitnehmen, auch wenn eine von ihnen
+      // die Sichtbarkeitsschwelle einen Moment später erreicht
+      const rowMates = hits.filter((hit) => hit.matches(ROW_TOGETHER)).flatMap((hit) => {
+        const top = hit.getBoundingClientRect().top;
+        return pending.filter(
+          (t) => t.parentElement === hit.parentElement && Math.abs(t.getBoundingClientRect().top - top) < 8,
+        );
+      });
+      const visible = [...new Set([...hits, ...rowMates])]
+        .filter((el) => pending.includes(el))
+        .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
+      pending = pending.filter((el) => !visible.includes(el));
+      for (const el of visible) {
         revealObserver.unobserve(el);
+        const now = performance.now();
+        // Reihenweise Karten: gleicher Container und gleiche Höhe erscheinen gemeinsam, die nächste Reihe danach.
+        // Auf dem Handy steht alles untereinander, dort also auch eins nach dem anderen.
+        const top = Math.round(el.getBoundingClientRect().top);
+        const sameRow =
+          el.matches(ROW_TOGETHER) && lastRow && lastRow.parent === el.parentElement && Math.abs(lastRow.top - top) < 8;
+        const start = sameRow ? lastRow.start : Math.max(now, nextSlot);
+        if (!sameRow) nextSlot = start + STAGGER_MS;
+        lastRow = { parent: el.parentElement, top, start };
+        const shuffle = el.matches(ROW_TOGETHER) ? Math.random() * ROW_SHUFFLE_MS : 0;
+        el.style.transitionDelay = `${Math.round(Math.max(start - now, 0) + shuffle)}ms`;
         el.classList.add("is-visible");
         // Danach aufräumen, damit Hover-Effekte der Karten wieder normal funktionieren
         const cleanup = (e) => {
@@ -77,7 +127,12 @@ onMounted(() => {
   targets.forEach((el) => revealObserver.observe(el));
 });
 
-onBeforeUnmount(() => revealObserver?.disconnect());
+onBeforeUnmount(() => {
+  revealObserver?.disconnect();
+  clearTimeout(readyTimer);
+  document.removeEventListener("hero-blobs-ready", showPage);
+  document.body.classList.remove("home-ready");
+});
 </script>
 
 <style scoped>
@@ -421,50 +476,24 @@ onBeforeUnmount(() => revealObserver?.disconnect());
 .home-contact :deep(.error-box .material-symbols-outlined) {
   color: var(--primary-orange);
 }
+/* Laptop: alles in einer zentrierten Spalte, Überschrift mittig */
 @media (min-width: 64rem) {
-  .home-contact :deep(#kontakt > div) {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
-    /* Überschrift nur so hoch wie nötig, die E-Mail-Box folgt direkt darunter */
-    grid-template-rows: auto 1fr;
-    column-gap: 4rem;
-    align-items: start;
-  }
-  /* Links: Überschrift und E-Mail-Box, linksbündig */
-  .home-contact :deep(#kontakt > div > div:nth-child(1)) {
-    grid-column: 1;
-    grid-row: 1;
-    margin-bottom: 2rem;
-    text-align: left;
-  }
-  .home-contact :deep(#kontakt > div > div:nth-child(2)) {
-    grid-column: 1;
-    grid-row: 2;
-    align-items: stretch;
-    margin: 0;
+  .home-contact :deep(.email-box),
+  .home-contact :deep(form) {
+    width: 100%;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
   }
   .home-contact :deep(.email-box) {
-    width: 100%;
-    align-items: flex-start;
     padding: 1.5rem;
   }
-  .home-contact :deep(.email-box-label),
-  .home-contact :deep(.email-box-link) {
-    margin-left: 0;
-    margin-right: 0;
+  .home-contact :deep(form) {
+    padding: 2.5rem;
   }
-  /* "oder / Fülle das Formular aus" braucht es nicht, wenn beides nebeneinander steht */
-  .home-contact :deep(.divider-or),
+  /* "Fülle das Formular aus" ist neben dem sichtbaren Formular überflüssig; "oder" bleibt */
   .home-contact :deep(.form-hint) {
     display: none;
-  }
-  /* Rechts: Formular über die volle Höhe */
-  .home-contact :deep(form) {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    max-width: none;
-    margin: 0;
-    padding: 2.5rem;
   }
 }
 
@@ -512,5 +541,40 @@ body:has(.home-page):not(.lumi-shapes-active) {
 body:has(.home-page) .hero-blobs {
   -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 140px), transparent);
   mask-image: linear-gradient(to bottom, #000 calc(100% - 140px), transparent);
+}
+/* ===== Erst einblenden, wenn Header und Formen bereit sind =====
+   Das Script setzt dann body.home-ready. Falls JavaScript hängt oder fehlt,
+   erscheint die Seite nach 2,5 Sekunden trotzdem (verzögerte Animation). */
+html:has(.home-page) {
+  background-color: #f4e8db;
+}
+@keyframes home-page-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes home-page-in-ready {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+body:has(.home-page) #__nuxt {
+  opacity: 0;
+  animation: home-page-in 0.8s ease 2.5s forwards;
+}
+body.home-ready:has(.home-page) #__nuxt {
+  animation: home-page-in-ready 0.8s ease forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  body:has(.home-page) #__nuxt {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* ===== Header auf Tablet und Handy etwas höher, damit der Inhalt mittiger im Bildschirm sitzt ===== */
+@media (max-width: 63.99rem) {
+  body:has(.home-page) .hero-section {
+    min-height: 90vh;
+    min-height: 90svh;
+  }
 }
 </style>

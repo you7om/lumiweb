@@ -332,7 +332,9 @@ void main() {
     gl_FragColor = vec4(0.0);
     return;
   }
-  gl_FragColor = texture2D(uTex, uv);
+  // Texturen kommen mit "geradem" Alpha an; hier einmal mit Alpha multiplizieren, wie es das Überblenden erwartet
+  vec4 tex = texture2D(uTex, uv);
+  gl_FragColor = vec4(tex.rgb * tex.a, tex.a);
 }`;
 
 // ===== Logik =====
@@ -406,10 +408,12 @@ async function init() {
     uniforms[name] = gl.getUniformLocation(program, `u${name}`);
   }
 
-  // Ebenen übereinander zeichnen (Texturen sind vormultipliert)
+  // Ebenen übereinander zeichnen (der Shader liefert vormultiplierte Farben).
+  // Texturen ohne Vormultiplizieren hochladen und das Alpha selbst im Shader einrechnen:
+  // Firefox rechnet es bei SVG-Bildern sonst doppelt ein, die weichen Ränder werden dann grau und dunkel.
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-  gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+  gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
 
   layers = buildLayers();
   await loadTextures();
@@ -417,6 +421,9 @@ async function init() {
 
   draw();
   ready.value = true;
+  // Für Seiten, die mit dem Einblenden warten, bis der Header fertig ist (z. B. die Startseite)
+  rootEl.value.dataset.ready = "";
+  rootEl.value.dispatchEvent(new CustomEvent("hero-blobs-ready", { bubbles: true }));
 
   resizeObserver = new ResizeObserver(() => {
     const { clientWidth: w, clientHeight: h } = rootEl.value;
@@ -494,7 +501,8 @@ function computeGeometry() {
   };
 }
 
-// Eine Ebene des SVGs als Bild rendern
+// Eine Ebene des SVGs als Bild rendern. Der Umweg über ein 2D-Canvas sorgt dafür,
+// dass alle Browser die Pixel gleich an WebGL übergeben (SVG-Bilder direkt behandelt Firefox anders).
 async function rasterize(key, geo) {
   const clone = artEl.value.cloneNode(true);
   clone.querySelectorAll("[data-layer]").forEach((el) => {
@@ -516,7 +524,11 @@ async function rasterize(key, geo) {
     const img = new Image(geo.pw, geo.ph);
     img.src = url;
     await img.decode();
-    return img;
+    const canvas = document.createElement("canvas");
+    canvas.width = geo.pw;
+    canvas.height = geo.ph;
+    canvas.getContext("2d").drawImage(img, 0, 0, geo.pw, geo.ph);
+    return canvas;
   } finally {
     URL.revokeObjectURL(url);
   }
