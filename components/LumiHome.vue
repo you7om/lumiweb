@@ -38,12 +38,12 @@ const REVEAL = [
   ".home-contact .divider-or", ".home-contact .form-hint", ".home-contact form > *",
 ].join(", ");
 // Abstand zwischen zwei Elementen, die nacheinander erscheinen
-const STAGGER_MS = 150;
+const STAGGER_MS = 220;
 // Diese Karten erscheinen reihenweise (eine Reihe, dann die nächste), innerhalb der Reihe
 // in zufälliger Reihenfolge bis zu ROW_SHUFFLE_MS versetzt. Alle anderen Elemente erscheinen
 // einzeln nacheinander. Auf dem Handy ist jede Reihe nur eine Karte, dort also auch nacheinander.
 const ROW_TOGETHER = ".home-projects .project-card";
-const ROW_SHUFFLE_MS = 260;
+const ROW_SHUFFLE_MS = 380;
 
 const pageEl = ref(null);
 let revealObserver = null;
@@ -142,8 +142,8 @@ onBeforeUnmount(() => {
   opacity: 0;
   transform: translateY(32px);
   transition:
-    opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 2.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 2.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 :deep(.home-reveal.home-reveal.home-reveal.is-visible) {
   opacity: 1;
@@ -279,8 +279,8 @@ onBeforeUnmount(() => {
 .home-services :deep(.serviceCard),
 .home-projects :deep(.project-card) {
   transition:
-    translate 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    translate 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .home-cta :deep(.feature-card:hover),
 .home-services :deep(.serviceCard:hover),
@@ -356,7 +356,7 @@ onBeforeUnmount(() => {
   border-color: var(--home-card-border);
 }
 
-/* ===== Über mich: Foto und Text in einer hellen, leicht durchscheinenden Fläche ===== */
+/* ===== Über mich: Foto und Text in einer Karte im Stil von Leistungen und "Warum mit mir" ===== */
 /* Ohne Überschrift: Foto und Einleitung zeigen schon, worum es geht */
 .home-about :deep(#about > h2) {
   display: none;
@@ -366,11 +366,26 @@ onBeforeUnmount(() => {
   margin-top: 1rem;
   padding: 1.5rem;
   border-radius: 2rem;
-  background: color-mix(in srgb, var(--primary-beige) 72%, transparent);
-  border: 1px solid color-mix(in srgb, #fff 45%, transparent);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--home-card-border);
   box-shadow: 0 20px 60px -30px color-mix(in srgb, var(--primary-black) 35%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+}
+/* Gleiches Verlaufsbild unter beigem Schleier wie bei den Leistungskarten, um 180° gedreht.
+   Die Karte ist breiter als hoch, eine 90°-Drehung würde sie nicht ganz abdecken. */
+.home-about :deep(#about > .grid::before) {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  transform: rotate(180deg);
+  background:
+    linear-gradient(
+      color-mix(in srgb, var(--primary-beige) 90%, transparent),
+      color-mix(in srgb, var(--primary-beige) 90%, transparent)
+    ),
+    url("/orange-abstract.jpg") center / cover;
 }
 .home-about :deep(#about img) {
   aspect-ratio: 4 / 5;

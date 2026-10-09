@@ -196,9 +196,9 @@ const heroMotion = computed(() =>
 );
 
 const navItems = [
-  { label: "Über mich", href: "#about" },
   { label: "Leistungen", href: "/leistungen" },
   { label: "Projekte", href: "/projects" },
+  { label: "Über mich", href: "#about" },
 ];
 
 const handleScroll = () => {
